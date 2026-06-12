@@ -2,7 +2,9 @@ name: Update results & deploy
 
 on:
   schedule:
-    - cron: '*/30 * * * *'   # every 30 minutes, 24/7
+    # every 30 min at :07 and :37 — offset from :00/:30 because GitHub
+    # throttles (and sometimes drops) schedules at the congested round times
+    - cron: '7,37 * * * *'
   workflow_dispatch:          # allows manual runs from the Actions tab
 
 concurrency:
