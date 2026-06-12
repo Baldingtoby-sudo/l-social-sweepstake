@@ -41,16 +41,25 @@ https://app.netlify.com/drop
 
 ## Automatic updates (installed)
 
-A macOS LaunchAgent (`~/Library/LaunchAgents/com.lsocial.sweepstake.update.plist`)
-runs `deploy.sh` every 30 minutes while the laptop is awake. The script only
-deploys when results actually changed, so most runs are no-ops. Activity is
-logged to `deploy.log` in this folder.
+A GitHub Action (`.github/workflows/update-results.yml`) runs every 30 minutes
+in the cloud, 24/7 — no laptop needed. It fetches results, and when something
+changed it deploys to Netlify and commits the updated `site/index.html` back to
+the repo (https://github.com/Baldingtoby-sudo/l-social-sweepstake).
+
+Secrets live in the repo settings: FOOTBALL_DATA_API_KEY, NETLIFY_AUTH_TOKEN,
+NETLIFY_SITE_ID.
 
 ```sh
-tail -20 deploy.log                                                  # see recent runs
-launchctl kickstart gui/$(id -u)/com.lsocial.sweepstake.update       # run right now
-launchctl bootout gui/$(id -u)/com.lsocial.sweepstake.update         # turn off (after the final!)
+~/.local/bin/gh run list --limit 5            # recent automatic runs
+~/.local/bin/gh workflow run update-results.yml   # trigger an update right now
+git pull                                      # sync this folder with bot commits
 ```
+
+To stop after the final: disable the workflow on GitHub (Actions tab → Update
+results & deploy → ⋯ → Disable workflow) or
+`~/.local/bin/gh workflow disable update-results.yml`.
+
+Manual `./deploy.sh` still works anytime — run `git pull` first.
 
 ## How the script maps things
 
