@@ -1,0 +1,16 @@
+{
+  "standings": [
+    {"group": "GROUP_A", "type": "TOTAL", "table": [
+      {"position": 1, "team": {"name": "Mexico"}, "playedGames": 3},
+      {"position": 2, "team": {"name": "Korea Republic"}, "playedGames": 3},
+      {"position": 3, "team": {"name": "Czechia"}, "playedGames": 3},
+      {"position": 4, "team": {"name": "South Africa"}, "playedGames": 3}
+    ]},
+    {"group": "GROUP_B", "type": "TOTAL", "table": [
+      {"position": 1, "team": {"name": "England"}, "playedGames": 1},
+      {"position": 2, "team": {"name": "Haiti"}, "playedGames": 1},
+      {"position": 3, "team": {"name": "Scotland"}, "playedGames": 1},
+      {"position": 4, "team": {"name": "Qatar"}, "playedGames": 1}
+    ]}
+  ]
+}

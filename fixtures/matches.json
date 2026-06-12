@@ -1,0 +1,25 @@
+{
+  "matches": [
+    {"status": "FINISHED", "stage": "GROUP_STAGE", "matchday": 1,
+     "homeTeam": {"name": "Mexico"}, "awayTeam": {"name": "South Africa"},
+     "score": {"winner": "HOME_TEAM", "duration": "REGULAR", "fullTime": {"home": 2, "away": 0}}},
+    {"status": "FINISHED", "stage": "GROUP_STAGE", "matchday": 1,
+     "homeTeam": {"name": "Korea Republic"}, "awayTeam": {"name": "Czechia"},
+     "score": {"winner": "HOME_TEAM", "duration": "REGULAR", "fullTime": {"home": 2, "away": 1}}},
+    {"status": "FINISHED", "stage": "GROUP_STAGE", "matchday": 2,
+     "homeTeam": {"name": "Türkiye"}, "awayTeam": {"name": "Côte d'Ivoire"},
+     "score": {"winner": "DRAW", "duration": "REGULAR", "fullTime": {"home": 1, "away": 1}}},
+    {"status": "FINISHED", "stage": "GROUP_STAGE", "matchday": 3,
+     "homeTeam": {"name": "Spain"}, "awayTeam": {"name": "Qatar"},
+     "score": {"winner": "HOME_TEAM", "duration": "REGULAR", "fullTime": {"home": 3, "away": 0}}},
+    {"status": "TIMED", "stage": "GROUP_STAGE", "matchday": 2,
+     "homeTeam": {"name": "England"}, "awayTeam": {"name": "Haiti"},
+     "score": {"winner": null, "duration": "REGULAR", "fullTime": {"home": null, "away": null}}},
+    {"status": "FINISHED", "stage": "LAST_32", "matchday": null,
+     "homeTeam": {"name": "Cabo Verde"}, "awayTeam": {"name": "Bosnia and Herzegovina"},
+     "score": {"winner": "AWAY_TEAM", "duration": "PENALTY_SHOOTOUT", "fullTime": {"home": 1, "away": 1}, "penalties": {"home": 3, "away": 4}}},
+    {"status": "FINISHED", "stage": "FINAL", "matchday": null,
+     "homeTeam": {"name": "France"}, "awayTeam": {"name": "Argentina"},
+     "score": {"winner": "AWAY_TEAM", "duration": "REGULAR", "fullTime": {"home": 2, "away": 3}}}
+  ]
+}

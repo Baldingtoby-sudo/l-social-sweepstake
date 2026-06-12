@@ -1,0 +1,54 @@
+name: Update results & deploy
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # every 30 minutes, 24/7
+  workflow_dispatch:          # allows manual runs from the Actions tab
+
+concurrency:
+  group: update-deploy
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch latest World Cup results
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: node update-results.js
+
+      - name: Check whether anything changed
+        id: diff
+        run: |
+          if git diff --quiet site/index.html; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No new results."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy to Netlify
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npx --yes netlify-cli deploy --prod --dir=site
+
+      - name: Commit updated results back to the repo
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "results-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add site/index.html
+          git commit -m "Auto-update World Cup results"
+          git push
