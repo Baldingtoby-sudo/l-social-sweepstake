@@ -158,6 +158,12 @@ function buildResults(matchesPayload) {
     // fullTime includes extra time; a knockout game level after ET is decided on pens
     const homeScore = m.score.fullTime.home;
     const awayScore = m.score.fullTime.away;
+    // Guard against the provider briefly flagging a match FINISHED before scores
+    // populate — skip until real numbers arrive rather than publishing nulls.
+    if (homeScore == null || awayScore == null) {
+      warnings.push(`FINISHED but no score yet — skipped ${home} v ${away}`);
+      continue;
+    }
     const entry = {
       gw: stage === 'group' ? (m.matchday || 1) : KO_GW[stage],
       stage, home, homeScore, away, awayScore,
