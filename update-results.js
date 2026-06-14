@@ -272,12 +272,24 @@ async function main() {
     return;
   }
 
-  let html = fs.readFileSync(HTML_PATH, 'utf8');
-  html = spliceBlock(html, 'RESULTS', resultsJs);
+  const original = fs.readFileSync(HTML_PATH, 'utf8');
+  let html = spliceBlock(original, 'RESULTS', resultsJs);
   html = spliceBlock(html, 'GROUP_FINISHES', finishesJs);
   html = spliceBlock(html, 'EXITS', exitsJs);
+
+  // Only refresh the "last updated" stamp when the data actually changed, so
+  // unchanged runs leave the file byte-identical (no needless deploys/commits).
+  if (html !== original) {
+    const d = new Date();
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const pad = n => String(n).padStart(2, '0');
+    const stamp = `${d.getUTCDate()} ${months[d.getUTCMonth()]} ${d.getUTCFullYear()}, ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())} UTC`;
+    html = html.replace(/<!--AUTO:UPDATED-->[\s\S]*?<!--\/AUTO:UPDATED-->/,
+      `<!--AUTO:UPDATED-->${stamp}<!--/AUTO:UPDATED-->`);
+  }
+
   fs.writeFileSync(HTML_PATH, html);
-  console.log(`✓ ${path.relative(process.cwd(), HTML_PATH)} updated: ${results.length} results, ${finishes.length} group finishes, ${exits.length} exits`);
+  console.log(`✓ ${path.relative(process.cwd(), HTML_PATH)} ${html === original ? 'unchanged' : 'updated'}: ${results.length} results, ${finishes.length} group finishes, ${exits.length} exits`);
 }
 
 main().catch(err => { console.error(err.message || err); process.exit(1); });
