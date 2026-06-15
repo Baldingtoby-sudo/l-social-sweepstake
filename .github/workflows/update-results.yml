@@ -21,7 +21,7 @@ permissions:
 jobs:
   loop:
     runs-on: ubuntu-latest
-    timeout-minutes: 340
+    timeout-minutes: 320
     steps:
       - uses: actions/checkout@v5
 
@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name "results-bot"
           git config user.email "actions@users.noreply.github.com"
-          for i in $(seq 1 66); do
+          for i in $(seq 1 55); do
             echo "── iteration $i · $(date -u '+%Y-%m-%d %H:%M:%S') UTC ──"
             node update-results.js || echo "fetch failed this tick, will retry"
             if ! git diff --quiet site/index.html; then
@@ -50,5 +50,21 @@ jobs:
             else
               echo "No change."
             fi
-            if [ "$i" -lt 66 ]; then sleep 300; fi
+            if [ "$i" -lt 55 ]; then sleep 300; fi
           done
+
+      # Launch the next loop before this one ends, so coverage never gaps.
+      # Needs LOOP_PAT (a fine-grained token); GitHub blocks the built-in token
+      # from chaining workflow runs. If LOOP_PAT is absent, this is skipped and
+      # the cron backstop is relied on instead.
+      - name: Relaunch the loop
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.LOOP_PAT }}
+        run: |
+          if [ -n "$GH_TOKEN" ]; then
+            gh workflow run update-results.yml --repo "$GITHUB_REPOSITORY"
+            echo "Next loop dispatched."
+          else
+            echo "No LOOP_PAT set — relying on schedule backstop."
+          fi
