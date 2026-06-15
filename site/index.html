@@ -226,14 +226,17 @@ table.pts tr:last-child td{border-bottom:none}
     </div>
     <div class="pts-card">
       <div class="pts-card-title">× Upset multiplier</div>
+      <div class="pts-row"><span>beat team 5 tiers stronger</span><span class="hi">× 2.75</span></div>
+      <div class="pts-row"><span>beat team 4 tiers stronger</span><span class="hi">× 2.4</span></div>
+      <div class="pts-row"><span>beat team 3 tiers stronger</span><span class="hi">× 1.8</span></div>
+      <div class="pts-row"><span>beat team 2 tiers stronger</span><span class="mid">× 1.45</span></div>
+      <div class="pts-row"><span>beat team 1 tier stronger</span><span class="mid">× 1.2</span></div>
       <div class="pts-row"><span>vs same tier</span><span>× 1.0</span></div>
-      <div class="pts-row"><span>vs 1 tier above</span><span class="mid">× 1.25</span></div>
-      <div class="pts-row"><span>vs 2 tiers above</span><span class="mid">× 1.5</span></div>
-      <div class="pts-row"><span>vs 3 tiers above</span><span class="mid">× 1.75</span></div>
-      <div class="pts-row"><span>vs 4 tiers above</span><span class="hi">× 2.0</span></div>
-      <div class="pts-row"><span>vs 5 tiers above</span><span class="hi">× 2.25</span></div>
-      <div class="pts-row"><span>vs 1 tier below</span><span class="lo">× 0.8</span></div>
-      <div class="pts-row"><span>vs 2+ tiers below</span><span class="lo">× 0.5</span></div>
+      <div class="pts-row"><span>beat team 1 tier weaker</span><span class="lo">× 0.8</span></div>
+      <div class="pts-row"><span>beat team 2 tiers weaker</span><span class="lo">× 0.7</span></div>
+      <div class="pts-row"><span>beat team 3 tiers weaker</span><span class="lo">× 0.65</span></div>
+      <div class="pts-row"><span>beat team 4 tiers weaker</span><span class="lo">× 0.6</span></div>
+      <div class="pts-row"><span>beat team 5 tiers weaker</span><span class="lo">× 0.55</span></div>
     </div>
   </div>
 
@@ -270,13 +273,13 @@ table.pts tr:last-child td{border-bottom:none}
     <tbody>
       <tr><td><span class="tier-tag tt1">Tier 1</span></td><td>9</td><td>6</td><td>5</td><td>4</td><td>2</td><td>1</td><td>-2</td></tr>
       <tr><td><span class="tier-tag tt2">Tier 2</span></td><td>12</td><td>8</td><td>6</td><td>5</td><td>4</td><td>2</td><td>0</td></tr>
-      <tr><td><span class="tier-tag tt3">Tier 3</span></td><td>20</td><td>15</td><td>12</td><td>10</td><td>8</td><td>4</td><td>2</td></tr>
-      <tr><td><span class="tier-tag tt4">Tier 4</span></td><td class="hi">GG</td><td class="hi">GG</td><td>15</td><td>20</td><td>12</td><td>6</td><td>5</td></tr>
-      <tr><td><span class="tier-tag tt5">Tier 5</span></td><td class="hi">GG</td><td class="hi">GG</td><td class="hi">GG</td><td>20</td><td>15</td><td>9</td><td>6</td></tr>
-      <tr><td><span class="tier-tag tt6">Tier 6</span></td><td class="hi">GG</td><td class="hi">GG</td><td class="hi">GG</td><td>25</td><td>18</td><td>12</td><td>7</td></tr>
+      <tr><td><span class="tier-tag tt3">Tier 3</span></td><td>18</td><td>14</td><td>11</td><td>9</td><td>7</td><td>4</td><td>2</td></tr>
+      <tr><td><span class="tier-tag tt4">Tier 4</span></td><td class="hi">25</td><td class="hi">25</td><td>15</td><td>13</td><td>10</td><td>6</td><td>5</td></tr>
+      <tr><td><span class="tier-tag tt5">Tier 5</span></td><td class="hi">25</td><td class="hi">25</td><td>18</td><td>16</td><td>13</td><td>8</td><td>6</td></tr>
+      <tr><td><span class="tier-tag tt6">Tier 6</span></td><td class="hi">25</td><td class="hi">25</td><td>22</td><td>20</td><td>16</td><td>11</td><td>7</td></tr>
     </tbody>
   </table>
-  <p class="note">GG = automatic win for that member regardless of result. Exit bonus is awarded once, when the team is eliminated (or wins). Negative values apply to Tier 1/2 teams knocked out early.</p>
+  <p class="note">A Tier 4-6 team reaching the final is the jackpot — a capped 25 pts (no longer an automatic win). Exit bonus is awarded once, when the team is eliminated (or wins). Negative values apply to Tier 1/2 teams knocked out early.</p>
 
 </div>
 
@@ -355,16 +358,18 @@ const ROUND_BASE = {group:5, r32:5, r16:5, qf:7, sf:9, '3rd':5, final:15};
 const DRAW_BASE  = {group:2, r32:2, r16:2, qf:2, sf:2, '3rd':2, final:2};
 const FINAL_LOSS_FLAT = 5;
 
-// Exit bonus: awarded once when a team exits the tournament
-// 'GG' = automatic maximum (treated as a very large number internally)
+// Exit bonus: awarded once when a team exits the tournament.
+// Reaching the FINAL is the jackpot for lower tiers (T4-6 = 25, capped — it no
+// longer single-handedly decides the title). Deeper-but-not-final runs now pay
+// finite, tier-scaled bonuses. Monotonic: deeper = more, weaker tier = more.
 const EXIT_BONUS = {
-  win:   {1:9,  2:12, 3:20, 4:'GG', 5:'GG', 6:'GG'},
-  final: {1:6,  2:8,  3:15, 4:'GG', 5:'GG', 6:'GG'},
-  '3rd': {1:5,  2:6,  3:12, 4:15,   5:'GG', 6:'GG'},
-  '4th': {1:4,  2:5,  3:10, 4:20,   5:20,   6:25},
-  qf:    {1:2,  2:4,  3:8,  4:12,   5:15,   6:18},
-  r16:   {1:1,  2:2,  3:4,  4:6,    5:9,    6:12},
-  r32:   {1:-2, 2:0,  3:2,  4:5,    5:6,    6:7},
+  win:   {1:9,  2:12, 3:18, 4:25, 5:25, 6:25},
+  final: {1:6,  2:8,  3:14, 4:25, 5:25, 6:25},
+  '3rd': {1:5,  2:6,  3:11, 4:15, 5:18, 6:22},
+  '4th': {1:4,  2:5,  3:9,  4:13, 5:16, 6:20},
+  qf:    {1:2,  2:4,  3:7,  4:10, 5:13, 6:16},
+  r16:   {1:1,  2:2,  3:4,  4:6,  5:8,  6:11},
+  r32:   {1:-2, 2:0,  3:2,  4:5,  5:6,  6:7},
 };
 
 // Group finish bonus by tier and position
@@ -379,21 +384,25 @@ const GROUP_FINISH_BONUS = {
 
 function exitBonus(tier, stage){
   const val = EXIT_BONUS[stage] && EXIT_BONUS[stage][tier];
-  if(val === 'GG') return 999; // GG = auto win, enormous bonus
   return val || 0;
 }
 
 function upsetMultiplier(winnerTier, loserTier){
-  // Lower tier number = stronger team (Tier 1 = best, Tier 6 = worst)
+  // Lower tier number = stronger team (Tier 1 = best, Tier 6 = worst).
+  // Ladder tuned so expected points-per-match are near-flat across the tier
+  // gap (compensating for win probability), capped to limit single-result swing.
   const diff = winnerTier - loserTier; // positive = upset (winner is weaker)
-  if(diff >= 5) return 2.25;
-  if(diff === 4) return 2.0;
-  if(diff === 3) return 1.75;
-  if(diff === 2) return 1.5;
-  if(diff === 1) return 1.25;
+  if(diff >= 5) return 2.75;
+  if(diff === 4) return 2.4;
+  if(diff === 3) return 1.8;
+  if(diff === 2) return 1.45;
+  if(diff === 1) return 1.2;
   if(diff === 0) return 1.0;
   if(diff === -1) return 0.8;
-  return 0.5; // winner 2+ tiers stronger
+  if(diff === -2) return 0.7;
+  if(diff === -3) return 0.65;
+  if(diff === -4) return 0.6;
+  return 0.55; // winner 5+ tiers stronger
 }
 
 // Game week labels: 1-3 are group match days, knockout rounds get fixed numbers
@@ -473,13 +482,14 @@ function calcPoints(upToGw){
     const info = COUNTRY_MAP[ex.country.toLowerCase()];
     if(!info) continue;
     const bonus = exitBonus(info.tier, ex.stage);
-    if(bonus === 999){
-      // GG — automatic win for that member, big flat bonus
-      pts[info.player].total += 50;
-      pts[info.player].breakdown.push({gw:exGw, desc:`${info.flag} ${info.name} — GG (automatic win)`, pts:50});
-    } else if(bonus !== 0){
+    if(bonus !== 0){
+      const reachedFinal = ex.stage === 'win' || ex.stage === 'final';
+      const isJackpot = reachedFinal && info.tier >= 4; // T4-6 reaching the final
+      const desc = isJackpot
+        ? `${info.flag} ${info.name} reached the FINAL 🎉`
+        : `${info.flag} ${info.name} ${ex.stage === 'win' ? 'WON the tournament 🏆' : 'exited at ' + ex.stage.toUpperCase()}`;
       pts[info.player].total += bonus;
-      pts[info.player].breakdown.push({gw:exGw, desc:`${info.flag} ${info.name} exited at ${ex.stage.toUpperCase()}`, pts:bonus});
+      pts[info.player].breakdown.push({gw:exGw, desc, pts:bonus});
     }
   }
 
