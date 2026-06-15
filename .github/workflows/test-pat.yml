@@ -1,0 +1,18 @@
+name: Test LOOP_PAT
+
+# Throwaway: verifies LOOP_PAT can launch the updater loop (the exact call the
+# loop makes to perpetuate itself). Deleted once confirmed working.
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use LOOP_PAT to dispatch the updater
+        env:
+          GH_TOKEN: ${{ secrets.LOOP_PAT }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "LOOP_PAT is empty"; exit 1; fi
+          gh workflow run update-results.yml --repo "$GITHUB_REPOSITORY"
+          echo "✓ LOOP_PAT successfully dispatched the updater loop"
