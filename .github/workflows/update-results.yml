@@ -1,10 +1,12 @@
-name: Update results & deploy
+name: Update results
 
 # A single job starts up and then checks for new results every 5 minutes for
-# ~5.5 hours, deploying whenever something changed. GitHub's cron scheduler is
-# unreliable (it drops/delays scheduled runs heavily), so we DON'T rely on it
-# to fire every 5 min — instead the schedule just (re)starts the long-running
-# loop, and the concurrency group ensures only one loop runs at a time.
+# ~5.5 hours, committing data.json whenever something changed. The live page
+# fetches data.json from GitHub directly, so NO Netlify redeploy happens here —
+# updates are free. GitHub's cron scheduler is unreliable (it drops/delays
+# scheduled runs heavily), so we DON'T rely on it to fire every 5 min — the
+# schedule just (re)starts the long-running loop, and the concurrency group
+# ensures only one loop runs at a time.
 
 on:
   schedule:
@@ -29,21 +31,18 @@ jobs:
         with:
           node-version: 22
 
-      - name: Poll every 5 minutes and deploy on change
+      - name: Poll every 5 minutes and commit data on change
         env:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
           git config user.name "results-bot"
           git config user.email "actions@users.noreply.github.com"
           for i in $(seq 1 55); do
             echo "── iteration $i · $(date -u '+%Y-%m-%d %H:%M:%S') UTC ──"
             node update-results.js || echo "fetch failed this tick, will retry"
-            if ! git diff --quiet site/index.html; then
-              echo "Change detected → deploying"
-              npx --yes netlify-cli deploy --prod --dir=site
-              git add site/index.html
+            if ! git diff --quiet site/data.json; then
+              echo "Change detected → committing data.json (no deploy)"
+              git add site/data.json
               git commit -m "Auto-update World Cup results"
               git pull --rebase --autostash || true
               git push || echo "push failed, will catch up next tick"
