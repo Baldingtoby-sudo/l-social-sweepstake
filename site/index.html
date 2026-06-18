@@ -160,7 +160,7 @@ table.pts tr:last-child td{border-bottom:none}
   <div class="hero-badge">L Social L Social Official Sweepstake · World Cup 2026</div>
   <h1>L Social<span>Sweepstake</span></h1>
   <p class="hero-sub">World Cup 2026 · USA · Canada · Mexico</p>
-  <p class="hero-updated">Results updated <span id="updated-stamp"><!--AUTO:UPDATED-->17 Jun 2026, 22:23 UTC<!--/AUTO:UPDATED--></span></p>
+  <p class="hero-updated">Results updated <span id="updated-stamp">loading…</span></p>
   <div class="divider"><span class="trophy">🏆</span></div>
 </div>
 
@@ -318,8 +318,8 @@ for(const [player, teams] of Object.entries(TEAMS)){
 // stage: 'group' | 'r32' | 'r16' | 'qf' | 'sf' | '3rd' | 'final'
 // gw: 1-3 = group match days; 4=R32, 5=R16, 6=QF, 7=SF, 8=3rd place, 9=Final
 // ─────────────────────────────────────────────
-/* AUTO:RESULTS:START */
-const RESULTS = [
+/* Embedded fallback / first paint — live data is fetched from data.json below */
+let RESULTS = [
   // GAME WEEK 1
   {gw:1, stage:'group', home:'Argentina', homeScore:3, away:'Algeria', awayScore:0},
   {gw:1, stage:'group', home:'Australia', homeScore:2, away:'Turkey', awayScore:0},
@@ -348,17 +348,33 @@ const RESULTS = [
 
 // Group finish data — populated after group stage ends
 // {country, finish: 1|2|3|4}
-/* AUTO:GROUP_FINISHES:START */
-const GROUP_FINISHES = [
+let GROUP_FINISHES = [
 ];
-/* AUTO:GROUP_FINISHES:END */
 
 // Knockout exit data — populated as teams are eliminated
 // stage: 'r32'|'r16'|'qf'|'4th'|'3rd'|'final'|'win'
-/* AUTO:EXITS:START */
-const EXITS = [
+let EXITS = [
 ];
-/* AUTO:EXITS:END */
+
+// ─────────────────────────────────────────────
+// LIVE DATA FEED
+// Results are committed to data.json on GitHub by update-results.js and served
+// free from GitHub's CDN, so the page never needs redeploying to update.
+// ─────────────────────────────────────────────
+const DATA_URL = 'https://raw.githubusercontent.com/Baldingtoby-sudo/l-social-sweepstake/main/site/data.json';
+async function loadData(){
+  try{
+    const res = await fetch(DATA_URL, {cache:'no-store'});
+    if(!res.ok) return;
+    const d = await res.json();
+    if(Array.isArray(d.results)) RESULTS = d.results;
+    if(Array.isArray(d.groupFinishes)) GROUP_FINISHES = d.groupFinishes;
+    if(Array.isArray(d.exits)) EXITS = d.exits;
+    if(d.updated){ const el = document.getElementById('updated-stamp'); if(el) el.textContent = d.updated; }
+    renderStandings();
+    renderResults();
+  }catch(e){ /* keep the embedded fallback on any network error */ }
+}
 
 // ─────────────────────────────────────────────
 // POINTS ENGINE
@@ -719,6 +735,8 @@ function showTab(id,el){
 
 renderStandings();
 renderResults();
+loadData();                         // pull live results from GitHub on load
+setInterval(loadData, 180000);      // and refresh every 3 minutes while open
 </script>
 </body>
 </html>

@@ -15,7 +15,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const HTML_PATH = path.join(__dirname, 'site', 'index.html');
+const DATA_PATH = path.join(__dirname, 'site', 'data.json');
 const API_BASE = 'https://api.football-data.org/v4';
 const COMPETITION = 'WC';
 
@@ -220,39 +220,6 @@ function buildExits(results) {
   return exits;
 }
 
-// ── Serialise + splice into the HTML ─────────────────────────────────────────
-const q = s => `'${String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
-
-function renderResultsJs(results) {
-  const gwName = gw => ({4:'ROUND OF 32',5:'ROUND OF 16',6:'QUARTER-FINALS',7:'SEMI-FINALS',8:'3RD PLACE PLAY-OFF',9:'FINAL'}[gw] || `GAME WEEK ${gw}`);
-  const lines = ['const RESULTS = ['];
-  let lastGw = null;
-  for (const r of results) {
-    if (r.gw !== lastGw) { lines.push(`  // ${gwName(r.gw)}`); lastGw = r.gw; }
-    const winner = r.winner ? `, winner:${q(r.winner)}` : '';
-    lines.push(`  {gw:${r.gw}, stage:${q(r.stage)}, home:${q(r.home)}, homeScore:${r.homeScore}, away:${q(r.away)}, awayScore:${r.awayScore}${winner}},`);
-  }
-  lines.push('];');
-  return lines.join('\n');
-}
-
-function renderSimpleJs(name, items, fields) {
-  const lines = [`const ${name} = [`];
-  for (const it of items) {
-    lines.push(`  {${fields.map(f => `${f}:${typeof it[f] === 'number' ? it[f] : q(it[f])}`).join(', ')}},`);
-  }
-  lines.push('];');
-  return lines.join('\n');
-}
-
-function spliceBlock(html, tag, replacement) {
-  const start = `/* AUTO:${tag}:START */`;
-  const end = `/* AUTO:${tag}:END */`;
-  const i = html.indexOf(start), j = html.indexOf(end);
-  if (i === -1 || j === -1) throw new Error(`Markers for ${tag} not found in ${HTML_PATH}`);
-  return html.slice(0, i + start.length) + '\n' + replacement + '\n' + html.slice(j);
-}
-
 // ── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
   const argv = process.argv.slice(2);
@@ -266,36 +233,39 @@ async function main() {
   const { finishes, warnings: w2 } = buildGroupFinishes(standings);
   const exits = buildExits(results);
 
-  const resultsJs = renderResultsJs(results);
-  const finishesJs = renderSimpleJs('GROUP_FINISHES', finishes, ['country', 'finish']);
-  const exitsJs = renderSimpleJs('EXITS', exits, ['country', 'stage']);
-
   for (const w of [...w1, ...w2]) console.warn(`⚠ ${w}`);
 
+  // The page fetches this JSON from GitHub on load — no site redeploy needed.
+  const core = { results, groupFinishes: finishes, exits };
+
   if (args.dryRun) {
-    console.log(resultsJs + '\n\n' + finishesJs + '\n\n' + exitsJs);
-    console.log(`\n(dry run) ${results.length} results, ${finishes.length} group finishes, ${exits.length} exits — file not modified`);
+    console.log(JSON.stringify({ updated: '(dry-run)', ...core }, null, 2));
+    console.log(`\n(dry run) ${results.length} results, ${finishes.length} group finishes, ${exits.length} exits — file not written`);
     return;
   }
 
-  const original = fs.readFileSync(HTML_PATH, 'utf8');
-  let html = spliceBlock(original, 'RESULTS', resultsJs);
-  html = spliceBlock(html, 'GROUP_FINISHES', finishesJs);
-  html = spliceBlock(html, 'EXITS', exitsJs);
-
-  // Only refresh the "last updated" stamp when the data actually changed, so
-  // unchanged runs leave the file byte-identical (no needless deploys/commits).
-  if (html !== original) {
-    const d = new Date();
-    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    const pad = n => String(n).padStart(2, '0');
-    const stamp = `${d.getUTCDate()} ${months[d.getUTCMonth()]} ${d.getUTCFullYear()}, ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())} UTC`;
-    html = html.replace(/<!--AUTO:UPDATED-->[\s\S]*?<!--\/AUTO:UPDATED-->/,
-      `<!--AUTO:UPDATED-->${stamp}<!--/AUTO:UPDATED-->`);
+  // Only rewrite (and re-stamp) when the data actually changed, so unchanged
+  // runs leave data.json byte-identical → no commit, no churn.
+  let prevCore = null;
+  if (fs.existsSync(DATA_PATH)) {
+    try {
+      const p = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
+      prevCore = { results: p.results, groupFinishes: p.groupFinishes, exits: p.exits };
+    } catch { /* malformed — treat as changed */ }
   }
 
-  fs.writeFileSync(HTML_PATH, html);
-  console.log(`✓ ${path.relative(process.cwd(), HTML_PATH)} ${html === original ? 'unchanged' : 'updated'}: ${results.length} results, ${finishes.length} group finishes, ${exits.length} exits`);
+  if (JSON.stringify(core) === JSON.stringify(prevCore)) {
+    console.log(`data.json unchanged: ${results.length} results, ${finishes.length} group finishes, ${exits.length} exits`);
+    return;
+  }
+
+  const d = new Date();
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const pad = n => String(n).padStart(2, '0');
+  const updated = `${d.getUTCDate()} ${months[d.getUTCMonth()]} ${d.getUTCFullYear()}, ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())} UTC`;
+
+  fs.writeFileSync(DATA_PATH, JSON.stringify({ updated, ...core }, null, 2) + '\n');
+  console.log(`✓ data.json updated: ${results.length} results, ${finishes.length} group finishes, ${exits.length} exits`);
 }
 
 main().catch(err => { console.error(err.message || err); process.exit(1); });
