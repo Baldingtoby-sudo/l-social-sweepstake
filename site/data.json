@@ -1,5 +1,5 @@
 {
-  "updated": "19 Jun 2026, 21:02 UTC",
+  "updated": "19 Jun 2026, 21:12 UTC",
   "results": [
     {
       "gw": 1,
@@ -224,6 +224,14 @@
       "homeScore": 4,
       "away": "Bosnia & H.",
       "awayScore": 1
+    },
+    {
+      "gw": 2,
+      "stage": "group",
+      "home": "USA",
+      "homeScore": 2,
+      "away": "Australia",
+      "awayScore": 0
     }
   ],
   "groupFinishes": [],
