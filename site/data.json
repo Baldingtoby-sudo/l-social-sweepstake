@@ -1,5 +1,5 @@
 {
-  "updated": "20 Jun 2026, 19:04 UTC",
+  "updated": "20 Jun 2026, 22:09 UTC",
   "results": [
     {
       "gw": 1,
@@ -215,6 +215,14 @@
       "home": "Czech Rep.",
       "homeScore": 1,
       "away": "South Africa",
+      "awayScore": 1
+    },
+    {
+      "gw": 2,
+      "stage": "group",
+      "home": "Germany",
+      "homeScore": 2,
+      "away": "Ivory Coast",
       "awayScore": 1
     },
     {
