@@ -1,5 +1,5 @@
 {
-  "updated": "20 Jun 2026, 04:45 UTC",
+  "updated": "20 Jun 2026, 05:15 UTC",
   "results": [
     {
       "gw": 1,
@@ -239,6 +239,14 @@
       "home": "Switzerland",
       "homeScore": 4,
       "away": "Bosnia & H.",
+      "awayScore": 1
+    },
+    {
+      "gw": 2,
+      "stage": "group",
+      "home": "Turkey",
+      "homeScore": 0,
+      "away": "Paraguay",
       "awayScore": 1
     },
     {
