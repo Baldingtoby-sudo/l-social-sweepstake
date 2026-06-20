@@ -1,5 +1,5 @@
 {
-  "updated": "20 Jun 2026, 14:57 UTC",
+  "updated": "20 Jun 2026, 19:04 UTC",
   "results": [
     {
       "gw": 1,
@@ -224,6 +224,14 @@
       "homeScore": 1,
       "away": "South Korea",
       "awayScore": 0
+    },
+    {
+      "gw": 2,
+      "stage": "group",
+      "home": "Netherlands",
+      "homeScore": 5,
+      "away": "Sweden",
+      "awayScore": 1
     },
     {
       "gw": 2,
