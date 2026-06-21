@@ -1,5 +1,5 @@
 {
-  "updated": "21 Jun 2026, 02:55 UTC",
+  "updated": "21 Jun 2026, 06:06 UTC",
   "results": [
     {
       "gw": 1,
@@ -264,6 +264,14 @@
       "homeScore": 4,
       "away": "Bosnia & H.",
       "awayScore": 1
+    },
+    {
+      "gw": 2,
+      "stage": "group",
+      "home": "Tunisia",
+      "homeScore": 0,
+      "away": "Japan",
+      "awayScore": 4
     },
     {
       "gw": 2,
