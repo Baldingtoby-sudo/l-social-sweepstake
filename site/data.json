@@ -1,5 +1,5 @@
 {
-  "updated": "21 Jun 2026, 16:18 UTC",
+  "updated": "21 Jun 2026, 18:09 UTC",
   "results": [
     {
       "gw": 1,
@@ -256,6 +256,14 @@
       "homeScore": 0,
       "away": "Morocco",
       "awayScore": 1
+    },
+    {
+      "gw": 2,
+      "stage": "group",
+      "home": "Spain",
+      "homeScore": 5,
+      "away": "Saudi Arabia",
+      "awayScore": 0
     },
     {
       "gw": 2,
