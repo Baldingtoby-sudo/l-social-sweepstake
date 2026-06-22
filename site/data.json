@@ -44,6 +44,14 @@
     {
       "gw": 1,
       "stage": "group",
+      "home": "Canada",
+      "homeScore": 1,
+      "away": "Bosnia & H.",
+      "awayScore": 1
+    },
+    {
+      "gw": 1,
+      "stage": "group",
       "home": "England",
       "homeScore": 4,
       "away": "Croatia",
