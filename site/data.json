@@ -1,5 +1,5 @@
 {
-  "updated": "23 Jun 2026, 05:02 UTC",
+  "updated": "23 Jun 2026, 05:07 UTC",
   "results": [
     {
       "gw": 1,
@@ -256,6 +256,14 @@
       "homeScore": 2,
       "away": "Ivory Coast",
       "awayScore": 1
+    },
+    {
+      "gw": 2,
+      "stage": "group",
+      "home": "Jordan",
+      "homeScore": 1,
+      "away": "Algeria",
+      "awayScore": 2
     },
     {
       "gw": 2,
