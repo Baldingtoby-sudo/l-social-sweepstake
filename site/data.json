@@ -1,5 +1,5 @@
 {
-  "updated": "24 Jun 2026, 21:53 UTC",
+  "updated": "24 Jun 2026, 22:03 UTC",
   "results": [
     {
       "gw": 1,
@@ -408,12 +408,28 @@
       "finish": 3
     },
     {
+      "country": "Brazil",
+      "finish": 1
+    },
+    {
       "country": "Canada",
+      "finish": 2
+    },
+    {
+      "country": "Haiti",
+      "finish": 4
+    },
+    {
+      "country": "Morocco",
       "finish": 2
     },
     {
       "country": "Qatar",
       "finish": 4
+    },
+    {
+      "country": "Scotland",
+      "finish": 3
     },
     {
       "country": "Switzerland",
