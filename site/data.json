@@ -1,5 +1,5 @@
 {
-  "updated": "24 Jun 2026, 16:16 UTC",
+  "updated": "24 Jun 2026, 19:02 UTC",
   "results": [
     {
       "gw": 1,
@@ -386,6 +386,23 @@
       "awayScore": 0
     }
   ],
-  "groupFinishes": [],
+  "groupFinishes": [
+    {
+      "country": "Bosnia & H.",
+      "finish": 3
+    },
+    {
+      "country": "Canada",
+      "finish": 1
+    },
+    {
+      "country": "Qatar",
+      "finish": 4
+    },
+    {
+      "country": "Switzerland",
+      "finish": 2
+    }
+  ],
   "exits": []
 }
