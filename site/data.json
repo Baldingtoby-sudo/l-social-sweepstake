@@ -1,5 +1,5 @@
 {
-  "updated": "25 Jun 2026, 22:59 UTC",
+  "updated": "25 Jun 2026, 23:04 UTC",
   "results": [
     {
       "gw": 1,
@@ -488,12 +488,20 @@
       "finish": 2
     },
     {
+      "country": "Japan",
+      "finish": 2
+    },
+    {
       "country": "Mexico",
       "finish": 1
     },
     {
       "country": "Morocco",
       "finish": 2
+    },
+    {
+      "country": "Netherlands",
+      "finish": 1
     },
     {
       "country": "Qatar",
@@ -512,8 +520,16 @@
       "finish": 3
     },
     {
+      "country": "Sweden",
+      "finish": 3
+    },
+    {
       "country": "Switzerland",
       "finish": 1
+    },
+    {
+      "country": "Tunisia",
+      "finish": 4
     }
   ],
   "exits": []
