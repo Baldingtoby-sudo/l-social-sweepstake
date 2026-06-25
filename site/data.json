@@ -1,5 +1,5 @@
 {
-  "updated": "24 Jun 2026, 23:18 UTC",
+  "updated": "25 Jun 2026, 00:08 UTC",
   "results": [
     {
       "gw": 1,
@@ -392,6 +392,22 @@
       "homeScore": 3,
       "away": "Qatar",
       "awayScore": 1
+    },
+    {
+      "gw": 3,
+      "stage": "group",
+      "home": "Morocco",
+      "homeScore": 4,
+      "away": "Haiti",
+      "awayScore": 2
+    },
+    {
+      "gw": 3,
+      "stage": "group",
+      "home": "Scotland",
+      "homeScore": 0,
+      "away": "Brazil",
+      "awayScore": 3
     },
     {
       "gw": 3,
