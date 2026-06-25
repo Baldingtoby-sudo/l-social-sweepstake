@@ -1,5 +1,5 @@
 {
-  "updated": "25 Jun 2026, 20:08 UTC",
+  "updated": "25 Jun 2026, 22:04 UTC",
   "results": [
     {
       "gw": 1,
@@ -396,10 +396,26 @@
     {
       "gw": 3,
       "stage": "group",
+      "home": "Curaçao",
+      "homeScore": 0,
+      "away": "Ivory Coast",
+      "awayScore": 2
+    },
+    {
+      "gw": 3,
+      "stage": "group",
       "home": "Czech Rep.",
       "homeScore": 0,
       "away": "Mexico",
       "awayScore": 3
+    },
+    {
+      "gw": 3,
+      "stage": "group",
+      "home": "Ecuador",
+      "homeScore": 2,
+      "away": "Germany",
+      "awayScore": 1
     },
     {
       "gw": 3,
