@@ -1,5 +1,5 @@
 {
-  "updated": "25 Jun 2026, 18:13 UTC",
+  "updated": "25 Jun 2026, 20:03 UTC",
   "results": [
     {
       "gw": 1,
@@ -39,14 +39,6 @@
       "home": "Brazil",
       "homeScore": 1,
       "away": "Morocco",
-      "awayScore": 1
-    },
-    {
-      "gw": 1,
-      "stage": "group",
-      "home": "Canada",
-      "homeScore": 1,
-      "away": "Bosnia & H.",
       "awayScore": 1
     },
     {
@@ -448,12 +440,28 @@
       "finish": 2
     },
     {
+      "country": "Curaçao",
+      "finish": 4
+    },
+    {
       "country": "Czech Rep.",
       "finish": 4
     },
     {
+      "country": "Ecuador",
+      "finish": 3
+    },
+    {
+      "country": "Germany",
+      "finish": 1
+    },
+    {
       "country": "Haiti",
       "finish": 4
+    },
+    {
+      "country": "Ivory Coast",
+      "finish": 2
     },
     {
       "country": "Mexico",
