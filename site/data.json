@@ -1,5 +1,5 @@
 {
-  "updated": "26 Jun 2026, 14:58 UTC",
+  "updated": "26 Jun 2026, 19:04 UTC",
   "results": [
     {
       "gw": 1,
@@ -512,11 +512,19 @@
       "finish": 3
     },
     {
+      "country": "France",
+      "finish": 1
+    },
+    {
       "country": "Germany",
       "finish": 1
     },
     {
       "country": "Haiti",
+      "finish": 4
+    },
+    {
+      "country": "Iraq",
       "finish": 4
     },
     {
@@ -540,6 +548,10 @@
       "finish": 1
     },
     {
+      "country": "Norway",
+      "finish": 2
+    },
+    {
       "country": "Paraguay",
       "finish": 3
     },
@@ -549,6 +561,10 @@
     },
     {
       "country": "Scotland",
+      "finish": 3
+    },
+    {
+      "country": "Senegal",
       "finish": 3
     },
     {
