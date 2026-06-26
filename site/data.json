@@ -1,5 +1,5 @@
 {
-  "updated": "26 Jun 2026, 04:00 UTC",
+  "updated": "26 Jun 2026, 04:05 UTC",
   "results": [
     {
       "gw": 1,
@@ -432,6 +432,14 @@
       "homeScore": 4,
       "away": "Haiti",
       "awayScore": 2
+    },
+    {
+      "gw": 3,
+      "stage": "group",
+      "home": "Paraguay",
+      "homeScore": 0,
+      "away": "Australia",
+      "awayScore": 0
     },
     {
       "gw": 3,
