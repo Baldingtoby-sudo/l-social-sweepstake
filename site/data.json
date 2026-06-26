@@ -1,5 +1,5 @@
 {
-  "updated": "26 Jun 2026, 01:05 UTC",
+  "updated": "26 Jun 2026, 02:00 UTC",
   "results": [
     {
       "gw": 1,
@@ -468,6 +468,10 @@
   ],
   "groupFinishes": [
     {
+      "country": "Australia",
+      "finish": 2
+    },
+    {
       "country": "Bosnia & H.",
       "finish": 3
     },
@@ -520,6 +524,10 @@
       "finish": 1
     },
     {
+      "country": "Paraguay",
+      "finish": 3
+    },
+    {
       "country": "Qatar",
       "finish": 4
     },
@@ -546,6 +554,14 @@
     {
       "country": "Tunisia",
       "finish": 4
+    },
+    {
+      "country": "Turkey",
+      "finish": 4
+    },
+    {
+      "country": "USA",
+      "finish": 1
     }
   ],
   "exits": []
