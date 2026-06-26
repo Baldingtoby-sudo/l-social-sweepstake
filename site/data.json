@@ -1,5 +1,5 @@
 {
-  "updated": "26 Jun 2026, 06:11 UTC",
+  "updated": "26 Jun 2026, 08:01 UTC",
   "results": [
     {
       "gw": 1,
@@ -396,38 +396,6 @@
     {
       "gw": 3,
       "stage": "group",
-      "home": "Curaçao",
-      "homeScore": 0,
-      "away": "Ivory Coast",
-      "awayScore": 2
-    },
-    {
-      "gw": 3,
-      "stage": "group",
-      "home": "Czech Rep.",
-      "homeScore": 0,
-      "away": "Mexico",
-      "awayScore": 3
-    },
-    {
-      "gw": 3,
-      "stage": "group",
-      "home": "Ecuador",
-      "homeScore": 2,
-      "away": "Germany",
-      "awayScore": 1
-    },
-    {
-      "gw": 3,
-      "stage": "group",
-      "home": "Japan",
-      "homeScore": 1,
-      "away": "Sweden",
-      "awayScore": 1
-    },
-    {
-      "gw": 3,
-      "stage": "group",
       "home": "Morocco",
       "homeScore": 4,
       "away": "Haiti",
@@ -452,26 +420,10 @@
     {
       "gw": 3,
       "stage": "group",
-      "home": "South Africa",
-      "homeScore": 1,
-      "away": "South Korea",
-      "awayScore": 0
-    },
-    {
-      "gw": 3,
-      "stage": "group",
       "home": "Switzerland",
       "homeScore": 2,
       "away": "Canada",
       "awayScore": 1
-    },
-    {
-      "gw": 3,
-      "stage": "group",
-      "home": "Tunisia",
-      "homeScore": 1,
-      "away": "Netherlands",
-      "awayScore": 3
     },
     {
       "gw": 3,
