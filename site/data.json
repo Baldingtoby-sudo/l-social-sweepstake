@@ -1,5 +1,5 @@
 {
-  "updated": "27 Jun 2026, 01:26 UTC",
+  "updated": "27 Jun 2026, 02:06 UTC",
   "results": [
     {
       "gw": 1,
@@ -396,6 +396,14 @@
     {
       "gw": 3,
       "stage": "group",
+      "home": "Cape Verde",
+      "homeScore": 0,
+      "away": "Saudi Arabia",
+      "awayScore": 0
+    },
+    {
+      "gw": 3,
+      "stage": "group",
       "home": "Curaçao",
       "homeScore": 0,
       "away": "Ivory Coast",
@@ -496,6 +504,14 @@
       "homeScore": 3,
       "away": "USA",
       "awayScore": 2
+    },
+    {
+      "gw": 3,
+      "stage": "group",
+      "home": "Uruguay",
+      "homeScore": 0,
+      "away": "Spain",
+      "awayScore": 1
     }
   ],
   "groupFinishes": [
