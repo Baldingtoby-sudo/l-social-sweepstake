@@ -1,5 +1,5 @@
 {
-  "updated": "27 Jun 2026, 04:57 UTC",
+  "updated": "27 Jun 2026, 05:02 UTC",
   "results": [
     {
       "gw": 1,
@@ -444,6 +444,14 @@
     {
       "gw": 3,
       "stage": "group",
+      "home": "Norway",
+      "homeScore": 1,
+      "away": "France",
+      "awayScore": 4
+    },
+    {
+      "gw": 3,
+      "stage": "group",
       "home": "Paraguay",
       "homeScore": 0,
       "away": "Australia",
@@ -456,6 +464,14 @@
       "homeScore": 0,
       "away": "Brazil",
       "awayScore": 3
+    },
+    {
+      "gw": 3,
+      "stage": "group",
+      "home": "Senegal",
+      "homeScore": 5,
+      "away": "Iraq",
+      "awayScore": 0
     },
     {
       "gw": 3,
@@ -537,7 +553,7 @@
     },
     {
       "country": "Egypt",
-      "finish": 2
+      "finish": 3
     },
     {
       "country": "France",
@@ -553,7 +569,7 @@
     },
     {
       "country": "Iran",
-      "finish": 3
+      "finish": 2
     },
     {
       "country": "Iraq",
