@@ -1,5 +1,5 @@
 {
-  "updated": "26 Jun 2026, 21:10 UTC",
+  "updated": "27 Jun 2026, 00:01 UTC",
   "results": [
     {
       "gw": 1,
@@ -516,6 +516,10 @@
       "finish": 2
     },
     {
+      "country": "Cape Verde",
+      "finish": 3
+    },
+    {
       "country": "Curaçao",
       "finish": 4
     },
@@ -576,6 +580,10 @@
       "finish": 4
     },
     {
+      "country": "Saudi Arabia",
+      "finish": 4
+    },
+    {
       "country": "Scotland",
       "finish": 3
     },
@@ -592,6 +600,10 @@
       "finish": 3
     },
     {
+      "country": "Spain",
+      "finish": 1
+    },
+    {
       "country": "Sweden",
       "finish": 3
     },
@@ -606,6 +618,10 @@
     {
       "country": "Turkey",
       "finish": 4
+    },
+    {
+      "country": "Uruguay",
+      "finish": 2
     },
     {
       "country": "USA",
