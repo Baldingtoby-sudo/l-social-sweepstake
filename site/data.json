@@ -1,5 +1,5 @@
 {
-  "updated": "28 Jun 2026, 01:37 UTC",
+  "updated": "28 Jun 2026, 02:02 UTC",
   "results": [
     {
       "gw": 1,
@@ -564,7 +564,19 @@
   ],
   "groupFinishes": [
     {
+      "country": "Algeria",
+      "finish": 3
+    },
+    {
+      "country": "Argentina",
+      "finish": 1
+    },
+    {
       "country": "Australia",
+      "finish": 2
+    },
+    {
+      "country": "Austria",
       "finish": 2
     },
     {
@@ -650,6 +662,10 @@
     {
       "country": "Japan",
       "finish": 2
+    },
+    {
+      "country": "Jordan",
+      "finish": 4
     },
     {
       "country": "Mexico",
