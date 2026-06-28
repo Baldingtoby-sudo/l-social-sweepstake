@@ -1,5 +1,5 @@
 {
-  "updated": "28 Jun 2026, 04:08 UTC",
+  "updated": "28 Jun 2026, 04:38 UTC",
   "results": [
     {
       "gw": 1,
@@ -420,14 +420,6 @@
     {
       "gw": 3,
       "stage": "group",
-      "home": "Croatia",
-      "homeScore": 2,
-      "away": "Ghana",
-      "awayScore": 1
-    },
-    {
-      "gw": 3,
-      "stage": "group",
       "home": "Curaçao",
       "homeScore": 0,
       "away": "Ivory Coast",
@@ -504,14 +496,6 @@
       "homeScore": 1,
       "away": "France",
       "awayScore": 4
-    },
-    {
-      "gw": 3,
-      "stage": "group",
-      "home": "Panama",
-      "homeScore": 0,
-      "away": "England",
-      "awayScore": 2
     },
     {
       "gw": 3,
