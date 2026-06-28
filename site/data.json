@@ -1,5 +1,5 @@
 {
-  "updated": "28 Jun 2026, 00:02 UTC",
+  "updated": "28 Jun 2026, 01:32 UTC",
   "results": [
     {
       "gw": 1,
@@ -589,7 +589,7 @@
     },
     {
       "country": "DR Congo",
-      "finish": 4
+      "finish": 3
     },
     {
       "country": "Ecuador",
@@ -721,7 +721,7 @@
     },
     {
       "country": "Uzbekistan",
-      "finish": 3
+      "finish": 4
     }
   ],
   "exits": []
