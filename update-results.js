@@ -253,6 +253,23 @@ function buildEliminated(allMatches, exits, finishes) {
   return [...elim].sort();
 }
 
+// Upcoming fixtures involving sweepstake teams (both teams known), for the
+// "Up Next" tab. TBD knockout slots (null teams) are skipped until drawn.
+function buildFixtures(allMatches) {
+  const fx = [];
+  for (const m of allMatches) {
+    if (m.status !== 'SCHEDULED' && m.status !== 'TIMED') continue;
+    const stage = STAGE_MAP[m.stage];
+    if (!stage) continue;
+    const home = mapTeam(m.homeTeam && m.homeTeam.name);
+    const away = mapTeam(m.awayTeam && m.awayTeam.name);
+    if (!home || !away) continue;
+    fx.push({ stage, home, away, utcDate: m.utcDate || null });
+  }
+  fx.sort((a, b) => (a.utcDate || '').localeCompare(b.utcDate || ''));
+  return fx.slice(0, 20);
+}
+
 // ── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
   const argv = process.argv.slice(2);
@@ -266,11 +283,12 @@ async function main() {
   const { finishes, warnings: w2 } = buildGroupFinishes(standings);
   const exits = buildExits(results);
   const eliminated = buildEliminated(matches.matches || [], exits, finishes);
+  const fixtures = buildFixtures(matches.matches || []);
 
   for (const w of [...w1, ...w2]) console.warn(`⚠ ${w}`);
 
   // The page fetches this JSON from GitHub on load — no site redeploy needed.
-  const core = { results, groupFinishes: finishes, exits, eliminated };
+  const core = { results, groupFinishes: finishes, exits, eliminated, fixtures };
 
   if (args.dryRun) {
     console.log(JSON.stringify({ updated: '(dry-run)', ...core }, null, 2));

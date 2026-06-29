@@ -143,6 +143,21 @@ table.draw td.draw-out{opacity:0.4;filter:grayscale(1);color:var(--muted);text-d
 .headline .hl-pts{color:var(--green);font-weight:700;font-variant-numeric:tabular-nums}
 .headline.champ{background:linear-gradient(90deg,rgba(245,200,66,0.26),rgba(245,200,66,0.06));border-color:var(--border-str);font-size:14px}
 
+/* UP NEXT (fixtures) */
+.fx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.fx-card{background:linear-gradient(180deg,rgba(255,255,255,0.022),transparent 55%),var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 12px;box-shadow:var(--shadow-soft);transition:transform .2s var(--ease),border-color .2s var(--ease);animation:fadeUp 0.35s ease both}
+.fx-card:hover{transform:translateY(-2px);border-color:var(--border-str)}
+.fx-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;padding-bottom:6px;border-bottom:1px solid rgba(245,200,66,0.08)}
+.fx-stage{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold)}
+.fx-time{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.fx-team{display:flex;align-items:center;gap:9px;padding:3px 0}
+.fx-flag{font-size:17px;line-height:1}
+.fx-teaminfo{display:flex;flex-direction:column;line-height:1.25}
+.fx-name{font-size:13px;font-weight:500}
+.fx-owner{font-size:10px;color:var(--muted)}
+.fx-pot{margin-left:auto;font-size:11px;color:var(--green);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fx-vs{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--muted);text-align:center;letter-spacing:0.15em;text-transform:uppercase;padding:1px 0}
+
 /* RESULTS */
 .gw-section{margin-bottom:1.5rem}
 .gw-header{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);padding:8px 0 8px;border-bottom:1px solid var(--border);margin-bottom:0.75rem}
@@ -222,6 +237,7 @@ table.pts tr:last-child td{border-bottom:none}
 <div class="tabs">
   <button class="tab active" onclick="showTab('draw',this)">The draw</button>
   <button class="tab" onclick="showTab('standings',this)">Live standings</button>
+  <button class="tab" onclick="showTab('fixtures',this)">Up next</button>
   <button class="tab" onclick="showTab('results',this)">Results</button>
   <button class="tab" onclick="showTab('points',this)">Points system</button>
 </div>
@@ -252,6 +268,17 @@ table.pts tr:last-child td{border-bottom:none}
       <div class="empty-icon">🏆</div>
       <div class="empty-text">Tournament hasn't started yet</div>
       <div class="empty-sub">Standings will update after each game week.<br>Upload results to see scores calculated automatically.</div>
+    </div>
+  </div>
+</div>
+
+<!-- UP NEXT -->
+<div class="panel" id="panel-fixtures">
+  <div id="fixtures-content">
+    <div class="empty-state">
+      <div class="empty-icon">📅</div>
+      <div class="empty-text">No fixtures scheduled yet</div>
+      <div class="empty-sub">Upcoming games involving your teams will appear here.</div>
     </div>
   </div>
 </div>
@@ -425,6 +452,7 @@ let EXITS = [
 // ─────────────────────────────────────────────
 const DATA_URL = 'https://raw.githubusercontent.com/Baldingtoby-sudo/l-social-sweepstake/main/site/data.json';
 let ELIMINATED = [];   // teams knocked out (group or knockout) — greyed on the Draw tab
+let FIXTURES = [];     // upcoming fixtures for the "Up next" tab
 let UPDATED_EPOCH = 0, UPDATED_ABS = '';
 async function loadData(){
   try{
@@ -435,11 +463,13 @@ async function loadData(){
     if(Array.isArray(d.groupFinishes)) GROUP_FINISHES = d.groupFinishes;
     if(Array.isArray(d.exits)) EXITS = d.exits;
     if(Array.isArray(d.eliminated)) ELIMINATED = d.eliminated;
+    if(Array.isArray(d.fixtures)) FIXTURES = d.fixtures;
     if(typeof d.updatedEpoch === 'number') UPDATED_EPOCH = d.updatedEpoch;
     if(d.updated) UPDATED_ABS = d.updated;
     setStamp();
     renderStandings();
     renderResults();
+    renderFixtures();
     markDraw();
   }catch(e){ /* keep the embedded fallback on any network error */ }
 }
@@ -761,6 +791,59 @@ function setStandingsView(v){ standingsView = v === 'overall' ? 'overall' : Numb
 function setResultsView(v){ resultsView = v === 'all' ? 'all' : Number(v); renderResults(); }
 
 // ─────────────────────────────────────────────
+// UP NEXT — upcoming fixtures + what each owner stands to win
+// ─────────────────────────────────────────────
+function renderFixtures(){
+  const el = document.getElementById('fixtures-content');
+  if(!el) return;
+  if(!FIXTURES.length){
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">📅</div><div class="empty-text">No fixtures scheduled yet</div><div class="empty-sub">Upcoming games involving your teams will appear here.<br>Check back when the next round is drawn.</div></div>`;
+    return;
+  }
+  const stageName = {group:'Group',r32:'Round of 32',r16:'Round of 16',qf:'Quarter-final',sf:'Semi-final','3rd':'3rd place',final:'Final'};
+  const dayKey = d => d ? new Date(d).toDateString() : 'TBC';
+  const dayLabel = d => {
+    if(!d) return 'Date TBC';
+    const dt = new Date(d);
+    const diff = Math.round((new Date(dt.toDateString()) - new Date(new Date().toDateString())) / 86400000);
+    const wd = dt.toLocaleDateString(undefined,{weekday:'short',day:'numeric',month:'short'});
+    return diff===0 ? 'Today · '+wd : diff===1 ? 'Tomorrow · '+wd : wd;
+  };
+  const timeLabel = d => d ? new Date(d).toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit'}) : 'TBC';
+
+  const groups = [];
+  let curKey = null;
+  for(const f of FIXTURES){
+    const k = dayKey(f.utcDate);
+    if(k !== curKey){ groups.push({date:f.utcDate, items:[]}); curKey = k; }
+    groups[groups.length-1].items.push(f);
+  }
+
+  const teamRow = (info, win) =>
+    `<div class="fx-team"><span class="fx-flag">${info.flag}</span>
+       <div class="fx-teaminfo"><div class="fx-name">${info.name}</div><div class="fx-owner">${info.player} · T${info.tier}</div></div>
+       <span class="fx-pot">win +${win}</span></div>`;
+
+  let html = '';
+  for(const g of groups){
+    html += `<div class="gw-section"><div class="gw-header">📅 ${dayLabel(g.date)}</div><div class="fx-grid">`;
+    for(const f of g.items){
+      const home = COUNTRY_MAP[f.home.toLowerCase()], away = COUNTRY_MAP[f.away.toLowerCase()];
+      if(!home || !away) continue;
+      const base = ROUND_BASE[f.stage] || 5;
+      const hWin = +(base * upsetMultiplier(home.tier, away.tier)).toFixed(1);
+      const aWin = +(base * upsetMultiplier(away.tier, home.tier)).toFixed(1);
+      html += `<div class="fx-card">
+        <div class="fx-top"><span class="fx-stage">${stageName[f.stage] || f.stage}</span><span class="fx-time">${timeLabel(f.utcDate)}</span></div>
+        ${teamRow(home, hWin)}<div class="fx-vs">v</div>${teamRow(away, aWin)}
+      </div>`;
+    }
+    html += `</div></div>`;
+  }
+  el.innerHTML = html;
+}
+
+// ─────────────────────────────────────────────
 // PLAYER RESULTS MODAL — click a standings row to see all their results by round
 // ─────────────────────────────────────────────
 function openPlayerModal(player){
@@ -928,6 +1011,7 @@ function showTab(id,el){
   el.classList.add('active');
   if(id==='standings') renderStandings();
   if(id==='results') renderResults();
+  if(id==='fixtures') renderFixtures();
 }
 
 renderStandings();
