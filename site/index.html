@@ -83,6 +83,7 @@ tr:hover td{background:rgba(255,255,255,0.025)}
 table.draw{table-layout:fixed;min-width:720px}
 table.draw th:first-child{width:115px}
 table.draw th{color:var(--gold)}
+table.draw td.draw-out{opacity:0.4;filter:grayscale(1);color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(106,122,98,0.6)}
 
 /* STANDINGS */
 .pos-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700}
@@ -362,6 +363,7 @@ let EXITS = [
 // free from GitHub's CDN, so the page never needs redeploying to update.
 // ─────────────────────────────────────────────
 const DATA_URL = 'https://raw.githubusercontent.com/Baldingtoby-sudo/l-social-sweepstake/main/site/data.json';
+let ELIMINATED = [];   // teams knocked out (group or knockout) — greyed on the Draw tab
 async function loadData(){
   try{
     const res = await fetch(DATA_URL, {cache:'no-store'});
@@ -370,10 +372,25 @@ async function loadData(){
     if(Array.isArray(d.results)) RESULTS = d.results;
     if(Array.isArray(d.groupFinishes)) GROUP_FINISHES = d.groupFinishes;
     if(Array.isArray(d.exits)) EXITS = d.exits;
+    if(Array.isArray(d.eliminated)) ELIMINATED = d.eliminated;
     if(d.updated){ const el = document.getElementById('updated-stamp'); if(el) el.textContent = d.updated; }
     renderStandings();
     renderResults();
+    markDraw();
   }catch(e){ /* keep the embedded fallback on any network error */ }
+}
+
+// Grey out knocked-out teams on the Draw tab. Cells map by column→player and
+// row→tier, so we look up each cell's country in TEAMS rather than parsing text.
+function markDraw(){
+  const out = new Set(ELIMINATED.map(s => s.toLowerCase()));
+  document.querySelectorAll('table.draw tbody tr').forEach((tr, row) => {
+    const cells = tr.querySelectorAll('td');
+    for(let c = 1; c < cells.length; c++){
+      const team = TEAMS[PLAYERS[c-1]] && TEAMS[PLAYERS[c-1]][row];
+      cells[c].classList.toggle('draw-out', !!team && out.has(team.n.toLowerCase()));
+    }
+  });
 }
 
 // ─────────────────────────────────────────────

@@ -1,5 +1,5 @@
 {
-  "updated": "29 Jun 2026, 19:09 UTC",
+  "updated": "29 Jun 2026, 20:50 UTC",
   "results": [
     {
       "gw": 1,
@@ -797,5 +797,25 @@
       "country": "South Africa",
       "stage": "r32"
     }
+  ],
+  "eliminated": [
+    "Curaçao",
+    "Czech Rep.",
+    "Haiti",
+    "Iran",
+    "Iraq",
+    "Japan",
+    "Jordan",
+    "New Zealand",
+    "Panama",
+    "Qatar",
+    "Saudi Arabia",
+    "Scotland",
+    "South Africa",
+    "South Korea",
+    "Tunisia",
+    "Turkey",
+    "Uruguay",
+    "Uzbekistan"
   ]
 }

@@ -93,6 +93,7 @@ for (const t of SWEEPSTAKE_TEAMS) NAME_LOOKUP[normKey(t)] = t;
 for (const [k, v] of Object.entries(ALIASES)) NAME_LOOKUP[normKey(k)] = v;
 
 function mapTeam(apiName) {
+  if (!apiName) return null; // scheduled KO fixtures can have TBD/null teams
   return NAME_LOOKUP[normKey(apiName)] || null;
 }
 
@@ -220,6 +221,38 @@ function buildExits(results) {
   return exits;
 }
 
+// Teams that can no longer win the tournament (greyed on the Draw tab).
+// Combines knockout losers with group-stage non-qualifiers. Safe by construction:
+// 1st/2nd always advance (never marked out on group grounds); 4th always out;
+// 3rd is out only once the knockout bracket exists and the team isn't in it.
+function buildEliminated(allMatches, exits, finishes) {
+  const elim = new Set();
+  for (const ex of exits) if (ex.stage !== 'win') elim.add(ex.country);
+
+  const koTeams = new Set();
+  let koExists = false;
+  for (const m of allMatches) {
+    const st = STAGE_MAP[m.stage];
+    if (st && st !== 'group') {
+      koExists = true;
+      const h = mapTeam(m.homeTeam && m.homeTeam.name);
+      const a = mapTeam(m.awayTeam && m.awayTeam.name);
+      if (h) koTeams.add(h);
+      if (a) koTeams.add(a);
+    }
+  }
+
+  // Only trust koTeams to mean "qualified" once the R32 bracket is fully drawn
+  // (real names in ~all 32 slots); before that, a TBD bracket would wrongly grey
+  // qualified teams. 4th place is always out regardless.
+  const bracketReady = koTeams.size >= 30;
+  for (const gf of finishes) {
+    if (gf.finish === 4) elim.add(gf.country);
+    else if (bracketReady && !koTeams.has(gf.country)) elim.add(gf.country);
+  }
+  return [...elim].sort();
+}
+
 // ── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
   const argv = process.argv.slice(2);
@@ -232,11 +265,12 @@ async function main() {
   const { results, warnings: w1 } = buildResults(matches);
   const { finishes, warnings: w2 } = buildGroupFinishes(standings);
   const exits = buildExits(results);
+  const eliminated = buildEliminated(matches.matches || [], exits, finishes);
 
   for (const w of [...w1, ...w2]) console.warn(`⚠ ${w}`);
 
   // The page fetches this JSON from GitHub on load — no site redeploy needed.
-  const core = { results, groupFinishes: finishes, exits };
+  const core = { results, groupFinishes: finishes, exits, eliminated };
 
   if (args.dryRun) {
     console.log(JSON.stringify({ updated: '(dry-run)', ...core }, null, 2));
