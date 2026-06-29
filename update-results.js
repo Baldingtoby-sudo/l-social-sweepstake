@@ -298,7 +298,7 @@ async function main() {
   const pad = n => String(n).padStart(2, '0');
   const updated = `${d.getUTCDate()} ${months[d.getUTCMonth()]} ${d.getUTCFullYear()}, ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())} UTC`;
 
-  fs.writeFileSync(DATA_PATH, JSON.stringify({ updated, ...core }, null, 2) + '\n');
+  fs.writeFileSync(DATA_PATH, JSON.stringify({ updated, updatedEpoch: d.getTime(), ...core }, null, 2) + '\n');
   console.log(`✓ data.json updated: ${results.length} results, ${finishes.length} group finishes, ${exits.length} exits`);
 }
 
