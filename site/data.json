@@ -1,6 +1,6 @@
 {
-  "updated": "29 Jun 2026, 21:51 UTC",
-  "updatedEpoch": 1782769871123,
+  "updated": "29 Jun 2026, 21:52 UTC",
+  "updatedEpoch": 1782769960281,
   "results": [
     {
       "gw": 1,
@@ -818,5 +818,85 @@
     "Turkey",
     "Uruguay",
     "Uzbekistan"
+  ],
+  "fixtures": [
+    {
+      "stage": "r32",
+      "home": "Netherlands",
+      "away": "Morocco",
+      "utcDate": "2026-06-30T01:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "Ivory Coast",
+      "away": "Norway",
+      "utcDate": "2026-06-30T17:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "France",
+      "away": "Sweden",
+      "utcDate": "2026-06-30T21:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "Mexico",
+      "away": "Ecuador",
+      "utcDate": "2026-07-01T01:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "England",
+      "away": "DR Congo",
+      "utcDate": "2026-07-01T16:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "Belgium",
+      "away": "Senegal",
+      "utcDate": "2026-07-01T20:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "USA",
+      "away": "Bosnia & H.",
+      "utcDate": "2026-07-02T00:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "Spain",
+      "away": "Austria",
+      "utcDate": "2026-07-02T19:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "Portugal",
+      "away": "Croatia",
+      "utcDate": "2026-07-02T23:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "Switzerland",
+      "away": "Algeria",
+      "utcDate": "2026-07-03T03:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "Australia",
+      "away": "Egypt",
+      "utcDate": "2026-07-03T18:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "Argentina",
+      "away": "Cape Verde",
+      "utcDate": "2026-07-03T22:00:00Z"
+    },
+    {
+      "stage": "r32",
+      "home": "Colombia",
+      "away": "Ghana",
+      "utcDate": "2026-07-04T01:30:00Z"
+    }
   ]
 }
