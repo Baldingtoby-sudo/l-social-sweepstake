@@ -1,5 +1,5 @@
 {
-  "updated": "28 Jun 2026, 21:04 UTC",
+  "updated": "29 Jun 2026, 19:09 UTC",
   "results": [
     {
       "gw": 1,
@@ -580,6 +580,14 @@
     {
       "gw": 4,
       "stage": "r32",
+      "home": "Brazil",
+      "homeScore": 2,
+      "away": "Japan",
+      "awayScore": 1
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
       "home": "South Africa",
       "homeScore": 0,
       "away": "Canada",
@@ -781,6 +789,10 @@
     }
   ],
   "exits": [
+    {
+      "country": "Japan",
+      "stage": "r32"
+    },
     {
       "country": "South Africa",
       "stage": "r32"
