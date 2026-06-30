@@ -1,6 +1,6 @@
 {
-  "updated": "30 Jun 2026, 19:59 UTC",
-  "updatedEpoch": 1782849584555,
+  "updated": "30 Jun 2026, 20:04 UTC",
+  "updatedEpoch": 1782849886830,
   "results": [
     {
       "gw": 1,
@@ -597,6 +597,14 @@
     {
       "gw": 4,
       "stage": "r32",
+      "home": "Ivory Coast",
+      "homeScore": 1,
+      "away": "Norway",
+      "awayScore": 2
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
       "home": "Netherlands",
       "homeScore": 3,
       "away": "Morocco",
@@ -811,6 +819,10 @@
       "stage": "r32"
     },
     {
+      "country": "Ivory Coast",
+      "stage": "r32"
+    },
+    {
       "country": "Japan",
       "stage": "r32"
     },
@@ -830,6 +842,7 @@
     "Haiti",
     "Iran",
     "Iraq",
+    "Ivory Coast",
     "Japan",
     "Jordan",
     "Netherlands",
@@ -846,12 +859,6 @@
     "Uzbekistan"
   ],
   "fixtures": [
-    {
-      "stage": "r32",
-      "home": "Ivory Coast",
-      "away": "Norway",
-      "utcDate": "2026-06-30T17:00:00Z"
-    },
     {
       "stage": "r32",
       "home": "France",
