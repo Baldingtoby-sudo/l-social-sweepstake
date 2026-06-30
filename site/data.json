@@ -1,6 +1,6 @@
 {
-  "updated": "30 Jun 2026, 00:24 UTC",
-  "updatedEpoch": 1782779076238,
+  "updated": "30 Jun 2026, 00:29 UTC",
+  "updatedEpoch": 1782779378629,
   "results": [
     {
       "gw": 1,
@@ -590,9 +590,9 @@
       "gw": 4,
       "stage": "r32",
       "home": "Germany",
-      "homeScore": 5,
+      "homeScore": 4,
       "away": "Paraguay",
-      "awayScore": 6
+      "awayScore": 5
     },
     {
       "gw": 4,
