@@ -1,6 +1,6 @@
 {
-  "updated": "30 Jun 2026, 22:56 UTC",
-  "updatedEpoch": 1782860201647,
+  "updated": "30 Jun 2026, 23:01 UTC",
+  "updatedEpoch": 1782860504179,
   "results": [
     {
       "gw": 1,
@@ -589,18 +589,18 @@
     {
       "gw": 4,
       "stage": "r32",
-      "home": "Germany",
-      "homeScore": 4,
-      "away": "Paraguay",
-      "awayScore": 5
+      "home": "France",
+      "homeScore": 3,
+      "away": "Sweden",
+      "awayScore": 0
     },
     {
       "gw": 4,
       "stage": "r32",
-      "home": "Ivory Coast",
-      "homeScore": 1,
-      "away": "Norway",
-      "awayScore": 2
+      "home": "Germany",
+      "homeScore": 4,
+      "away": "Paraguay",
+      "awayScore": 5
     },
     {
       "gw": 4,
@@ -819,10 +819,6 @@
       "stage": "r32"
     },
     {
-      "country": "Ivory Coast",
-      "stage": "r32"
-    },
-    {
       "country": "Japan",
       "stage": "r32"
     },
@@ -833,6 +829,10 @@
     {
       "country": "South Africa",
       "stage": "r32"
+    },
+    {
+      "country": "Sweden",
+      "stage": "r32"
     }
   ],
   "eliminated": [
@@ -842,7 +842,6 @@
     "Haiti",
     "Iran",
     "Iraq",
-    "Ivory Coast",
     "Japan",
     "Jordan",
     "Netherlands",
@@ -853,12 +852,19 @@
     "Scotland",
     "South Africa",
     "South Korea",
+    "Sweden",
     "Tunisia",
     "Turkey",
     "Uruguay",
     "Uzbekistan"
   ],
   "fixtures": [
+    {
+      "stage": "r32",
+      "home": "Ivory Coast",
+      "away": "Norway",
+      "utcDate": "2026-06-30T17:00:00Z"
+    },
     {
       "stage": "r32",
       "home": "Mexico",
