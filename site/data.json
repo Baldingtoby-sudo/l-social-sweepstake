@@ -1,6 +1,6 @@
 {
-  "updated": "30 Jun 2026, 04:11 UTC",
-  "updatedEpoch": 1782792706425,
+  "updated": "30 Jun 2026, 04:16 UTC",
+  "updatedEpoch": 1782793008693,
   "results": [
     {
       "gw": 1,
@@ -598,7 +598,7 @@
       "gw": 4,
       "stage": "r32",
       "home": "Netherlands",
-      "homeScore": 4,
+      "homeScore": 3,
       "away": "Morocco",
       "awayScore": 4
     },
