@@ -1,6 +1,6 @@
 {
-  "updated": "30 Jun 2026, 03:46 UTC",
-  "updatedEpoch": 1782791194756,
+  "updated": "30 Jun 2026, 03:51 UTC",
+  "updatedEpoch": 1782791497085,
   "results": [
     {
       "gw": 1,
@@ -597,6 +597,14 @@
     {
       "gw": 4,
       "stage": "r32",
+      "home": "Netherlands",
+      "homeScore": 4,
+      "away": "Morocco",
+      "awayScore": 2
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
       "home": "South Africa",
       "homeScore": 0,
       "away": "Canada",
@@ -807,6 +815,10 @@
       "stage": "r32"
     },
     {
+      "country": "Morocco",
+      "stage": "r32"
+    },
+    {
       "country": "South Africa",
       "stage": "r32"
     }
@@ -820,6 +832,7 @@
     "Iraq",
     "Japan",
     "Jordan",
+    "Morocco",
     "New Zealand",
     "Panama",
     "Qatar",
