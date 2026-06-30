@@ -1,6 +1,6 @@
 {
-  "updated": "30 Jun 2026, 01:04 UTC",
-  "updatedEpoch": 1782781495051,
+  "updated": "30 Jun 2026, 01:09 UTC",
+  "updatedEpoch": 1782781797786,
   "results": [
     {
       "gw": 1,
@@ -833,12 +833,6 @@
     "Uzbekistan"
   ],
   "fixtures": [
-    {
-      "stage": "r32",
-      "home": "Netherlands",
-      "away": "Morocco",
-      "utcDate": "2026-06-30T01:00:00Z"
-    },
     {
       "stage": "r32",
       "home": "Ivory Coast",
