@@ -1,6 +1,6 @@
 {
-  "updated": "1 Jul 2026, 04:44 UTC",
-  "updatedEpoch": 1782881070280,
+  "updated": "1 Jul 2026, 04:49 UTC",
+  "updatedEpoch": 1782881372318,
   "results": [
     {
       "gw": 1,
@@ -613,6 +613,14 @@
     {
       "gw": 4,
       "stage": "r32",
+      "home": "Mexico",
+      "homeScore": 2,
+      "away": "Ecuador",
+      "awayScore": 0
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
       "home": "Netherlands",
       "homeScore": 3,
       "away": "Morocco",
@@ -823,6 +831,10 @@
   ],
   "exits": [
     {
+      "country": "Ecuador",
+      "stage": "r32"
+    },
+    {
       "country": "Germany",
       "stage": "r32"
     },
@@ -850,6 +862,7 @@
   "eliminated": [
     "Curaçao",
     "Czech Rep.",
+    "Ecuador",
     "Germany",
     "Haiti",
     "Iran",
@@ -872,12 +885,6 @@
     "Uzbekistan"
   ],
   "fixtures": [
-    {
-      "stage": "r32",
-      "home": "Mexico",
-      "away": "Ecuador",
-      "utcDate": "2026-07-01T01:00:00Z"
-    },
     {
       "stage": "r32",
       "home": "England",
