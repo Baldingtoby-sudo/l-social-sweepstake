@@ -1,6 +1,6 @@
 {
-  "updated": "1 Jul 2026, 05:50 UTC",
-  "updatedEpoch": 1782885012727,
+  "updated": "1 Jul 2026, 05:55 UTC",
+  "updatedEpoch": 1782885315014,
   "results": [
     {
       "gw": 1,
@@ -605,6 +605,14 @@
     {
       "gw": 4,
       "stage": "r32",
+      "home": "Ivory Coast",
+      "homeScore": 1,
+      "away": "Norway",
+      "awayScore": 2
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
       "home": "Mexico",
       "homeScore": 2,
       "away": "Ecuador",
@@ -831,6 +839,10 @@
       "stage": "r32"
     },
     {
+      "country": "Ivory Coast",
+      "stage": "r32"
+    },
+    {
       "country": "Japan",
       "stage": "r32"
     },
@@ -855,6 +867,7 @@
     "Haiti",
     "Iran",
     "Iraq",
+    "Ivory Coast",
     "Japan",
     "Jordan",
     "Netherlands",
@@ -872,12 +885,6 @@
     "Uzbekistan"
   ],
   "fixtures": [
-    {
-      "stage": "r32",
-      "home": "Ivory Coast",
-      "away": "Norway",
-      "utcDate": "2026-06-30T17:00:00Z"
-    },
     {
       "stage": "r32",
       "home": "England",
