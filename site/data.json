@@ -1,6 +1,6 @@
 {
-  "updated": "2 Jul 2026, 06:06 UTC",
-  "updatedEpoch": 1782972372136,
+  "updated": "2 Jul 2026, 06:11 UTC",
+  "updatedEpoch": 1782972674658,
   "results": [
     {
       "gw": 1,
@@ -977,6 +977,18 @@
       "home": "Brazil",
       "away": "Norway",
       "utcDate": "2026-07-05T20:00:00Z"
+    },
+    {
+      "stage": "r16",
+      "home": "Mexico",
+      "away": "England",
+      "utcDate": "2026-07-06T00:00:00Z"
+    },
+    {
+      "stage": "r16",
+      "home": "USA",
+      "away": "Belgium",
+      "utcDate": "2026-07-07T00:00:00Z"
     }
   ]
 }
