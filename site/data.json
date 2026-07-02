@@ -1,6 +1,6 @@
 {
-  "updated": "2 Jul 2026, 20:59 UTC",
-  "updatedEpoch": 1783025948907,
+  "updated": "2 Jul 2026, 21:04 UTC",
+  "updatedEpoch": 1783026251251,
   "results": [
     {
       "gw": 1,
@@ -653,6 +653,14 @@
     {
       "gw": 4,
       "stage": "r32",
+      "home": "Spain",
+      "homeScore": 3,
+      "away": "Austria",
+      "awayScore": 0
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
       "home": "USA",
       "homeScore": 2,
       "away": "Bosnia & H.",
@@ -855,6 +863,10 @@
   ],
   "exits": [
     {
+      "country": "Austria",
+      "stage": "r32"
+    },
+    {
       "country": "Bosnia & H.",
       "stage": "r32"
     },
@@ -896,6 +908,7 @@
     }
   ],
   "eliminated": [
+    "Austria",
     "Bosnia & H.",
     "Curaçao",
     "Czech Rep.",
