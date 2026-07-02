@@ -1,6 +1,6 @@
 {
-  "updated": "2 Jul 2026, 02:09 UTC",
-  "updatedEpoch": 1782958160015,
+  "updated": "2 Jul 2026, 02:14 UTC",
+  "updatedEpoch": 1782958461622,
   "results": [
     {
       "gw": 1,
@@ -649,6 +649,14 @@
       "homeScore": 0,
       "away": "Canada",
       "awayScore": 1
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
+      "home": "USA",
+      "homeScore": 2,
+      "away": "Bosnia & H.",
+      "awayScore": 0
     }
   ],
   "groupFinishes": [
@@ -847,6 +855,10 @@
   ],
   "exits": [
     {
+      "country": "Bosnia & H.",
+      "stage": "r32"
+    },
+    {
       "country": "DR Congo",
       "stage": "r32"
     },
@@ -884,6 +896,7 @@
     }
   ],
   "eliminated": [
+    "Bosnia & H.",
     "Curaçao",
     "Czech Rep.",
     "DR Congo",
