@@ -1,6 +1,6 @@
 {
-  "updated": "3 Jul 2026, 20:54 UTC",
-  "updatedEpoch": 1783112081574,
+  "updated": "3 Jul 2026, 20:59 UTC",
+  "updatedEpoch": 1783112383248,
   "results": [
     {
       "gw": 1,
@@ -581,6 +581,14 @@
     {
       "gw": 4,
       "stage": "r32",
+      "home": "Australia",
+      "homeScore": 3,
+      "away": "Egypt",
+      "awayScore": 5
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
       "home": "Belgium",
       "homeScore": 3,
       "away": "Senegal",
@@ -883,6 +891,10 @@
       "stage": "r32"
     },
     {
+      "country": "Australia",
+      "stage": "r32"
+    },
+    {
       "country": "Austria",
       "stage": "r32"
     },
@@ -933,6 +945,7 @@
   ],
   "eliminated": [
     "Algeria",
+    "Australia",
     "Austria",
     "Bosnia & H.",
     "Croatia",
