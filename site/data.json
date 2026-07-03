@@ -1,6 +1,6 @@
 {
-  "updated": "3 Jul 2026, 18:03 UTC",
-  "updatedEpoch": 1783101817727,
+  "updated": "3 Jul 2026, 18:08 UTC",
+  "updatedEpoch": 1783102120246,
   "results": [
     {
       "gw": 1,
@@ -963,12 +963,6 @@
     "Uzbekistan"
   ],
   "fixtures": [
-    {
-      "stage": "r32",
-      "home": "Australia",
-      "away": "Egypt",
-      "utcDate": "2026-07-03T18:00:00Z"
-    },
     {
       "stage": "r32",
       "home": "Argentina",
