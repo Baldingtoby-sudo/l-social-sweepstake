@@ -1,6 +1,6 @@
 {
-  "updated": "3 Jul 2026, 04:57 UTC",
-  "updatedEpoch": 1783054666897,
+  "updated": "3 Jul 2026, 05:02 UTC",
+  "updatedEpoch": 1783054968697,
   "results": [
     {
       "gw": 1,
@@ -669,6 +669,14 @@
     {
       "gw": 4,
       "stage": "r32",
+      "home": "Switzerland",
+      "homeScore": 2,
+      "away": "Algeria",
+      "awayScore": 0
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
       "home": "USA",
       "homeScore": 2,
       "away": "Bosnia & H.",
@@ -871,6 +879,10 @@
   ],
   "exits": [
     {
+      "country": "Algeria",
+      "stage": "r32"
+    },
+    {
       "country": "Austria",
       "stage": "r32"
     },
@@ -920,6 +932,7 @@
     }
   ],
   "eliminated": [
+    "Algeria",
     "Austria",
     "Bosnia & H.",
     "Croatia",
