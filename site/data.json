@@ -1,6 +1,6 @@
 {
-  "updated": "3 Jul 2026, 01:26 UTC",
-  "updatedEpoch": 1783041971158,
+  "updated": "3 Jul 2026, 01:31 UTC",
+  "updatedEpoch": 1783042273009,
   "results": [
     {
       "gw": 1,
@@ -648,7 +648,7 @@
       "home": "Portugal",
       "homeScore": 2,
       "away": "Croatia",
-      "awayScore": 2
+      "awayScore": 1
     },
     {
       "gw": 4,
@@ -879,6 +879,10 @@
       "stage": "r32"
     },
     {
+      "country": "Croatia",
+      "stage": "r32"
+    },
+    {
       "country": "DR Congo",
       "stage": "r32"
     },
@@ -903,10 +907,6 @@
       "stage": "r32"
     },
     {
-      "country": "Portugal",
-      "stage": "r32"
-    },
-    {
       "country": "Senegal",
       "stage": "r32"
     },
@@ -922,6 +922,7 @@
   "eliminated": [
     "Austria",
     "Bosnia & H.",
+    "Croatia",
     "Curaçao",
     "Czech Rep.",
     "DR Congo",
@@ -936,7 +937,6 @@
     "Netherlands",
     "New Zealand",
     "Panama",
-    "Portugal",
     "Qatar",
     "Saudi Arabia",
     "Scotland",
