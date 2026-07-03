@@ -1,6 +1,6 @@
 {
-  "updated": "3 Jul 2026, 01:11 UTC",
-  "updatedEpoch": 1783041066235,
+  "updated": "3 Jul 2026, 01:16 UTC",
+  "updatedEpoch": 1783041367955,
   "results": [
     {
       "gw": 1,
@@ -645,6 +645,14 @@
     {
       "gw": 4,
       "stage": "r32",
+      "home": "Portugal",
+      "homeScore": 2,
+      "away": "Croatia",
+      "awayScore": 2
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
       "home": "South Africa",
       "homeScore": 0,
       "away": "Canada",
@@ -895,6 +903,10 @@
       "stage": "r32"
     },
     {
+      "country": "Portugal",
+      "stage": "r32"
+    },
+    {
       "country": "Senegal",
       "stage": "r32"
     },
@@ -924,6 +936,7 @@
     "Netherlands",
     "New Zealand",
     "Panama",
+    "Portugal",
     "Qatar",
     "Saudi Arabia",
     "Scotland",
