@@ -1,6 +1,6 @@
 {
-  "updated": "4 Jul 2026, 03:42 UTC",
-  "updatedEpoch": 1783136568197,
+  "updated": "4 Jul 2026, 03:47 UTC",
+  "updatedEpoch": 1783136869963,
   "results": [
     {
       "gw": 1,
@@ -614,7 +614,7 @@
       "gw": 4,
       "stage": "r32",
       "home": "Colombia",
-      "homeScore": 2,
+      "homeScore": 1,
       "away": "Ghana",
       "awayScore": 0
     },
