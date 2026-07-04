@@ -1,6 +1,6 @@
 {
-  "updated": "4 Jul 2026, 03:32 UTC",
-  "updatedEpoch": 1783135964699,
+  "updated": "4 Jul 2026, 03:37 UTC",
+  "updatedEpoch": 1783136266496,
   "results": [
     {
       "gw": 1,
@@ -613,6 +613,14 @@
     {
       "gw": 4,
       "stage": "r32",
+      "home": "Colombia",
+      "homeScore": 2,
+      "away": "Ghana",
+      "awayScore": 0
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
       "home": "England",
       "homeScore": 2,
       "away": "DR Congo",
@@ -931,6 +939,10 @@
       "stage": "r32"
     },
     {
+      "country": "Ghana",
+      "stage": "r32"
+    },
+    {
       "country": "Ivory Coast",
       "stage": "r32"
     },
@@ -967,6 +979,7 @@
     "DR Congo",
     "Ecuador",
     "Germany",
+    "Ghana",
     "Haiti",
     "Iran",
     "Iraq",
