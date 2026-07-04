@@ -1,6 +1,6 @@
 {
-  "updated": "4 Jul 2026, 00:46 UTC",
-  "updatedEpoch": 1783125989187,
+  "updated": "4 Jul 2026, 00:51 UTC",
+  "updatedEpoch": 1783126290957,
   "results": [
     {
       "gw": 1,
@@ -581,6 +581,14 @@
     {
       "gw": 4,
       "stage": "r32",
+      "home": "Argentina",
+      "homeScore": 3,
+      "away": "Cape Verde",
+      "awayScore": 2
+    },
+    {
+      "gw": 4,
+      "stage": "r32",
       "home": "Australia",
       "homeScore": 3,
       "away": "Egypt",
@@ -903,6 +911,10 @@
       "stage": "r32"
     },
     {
+      "country": "Cape Verde",
+      "stage": "r32"
+    },
+    {
       "country": "Croatia",
       "stage": "r32"
     },
@@ -948,6 +960,7 @@
     "Australia",
     "Austria",
     "Bosnia & H.",
+    "Cape Verde",
     "Croatia",
     "Curaçao",
     "Czech Rep.",
