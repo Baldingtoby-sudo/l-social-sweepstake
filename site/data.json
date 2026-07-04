@@ -1,6 +1,6 @@
 {
-  "updated": "4 Jul 2026, 19:05 UTC",
-  "updatedEpoch": 1783191913810,
+  "updated": "4 Jul 2026, 19:10 UTC",
+  "updatedEpoch": 1783192216142,
   "results": [
     {
       "gw": 1,
@@ -705,6 +705,14 @@
       "homeScore": 2,
       "away": "Bosnia & H.",
       "awayScore": 0
+    },
+    {
+      "gw": 5,
+      "stage": "r16",
+      "home": "Canada",
+      "homeScore": 0,
+      "away": "Morocco",
+      "awayScore": 3
     }
   ],
   "groupFinishes": [
@@ -919,6 +927,10 @@
       "stage": "r32"
     },
     {
+      "country": "Canada",
+      "stage": "r16"
+    },
+    {
       "country": "Cape Verde",
       "stage": "r32"
     },
@@ -972,6 +984,7 @@
     "Australia",
     "Austria",
     "Bosnia & H.",
+    "Canada",
     "Cape Verde",
     "Croatia",
     "Curaçao",
