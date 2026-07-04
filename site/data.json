@@ -1,6 +1,6 @@
 {
-  "updated": "4 Jul 2026, 06:08 UTC",
-  "updatedEpoch": 1783145320808,
+  "updated": "4 Jul 2026, 06:13 UTC",
+  "updatedEpoch": 1783145622546,
   "results": [
     {
       "gw": 1,
@@ -1028,9 +1028,27 @@
     },
     {
       "stage": "r16",
+      "home": "Portugal",
+      "away": "Spain",
+      "utcDate": "2026-07-06T19:00:00Z"
+    },
+    {
+      "stage": "r16",
       "home": "USA",
       "away": "Belgium",
       "utcDate": "2026-07-07T00:00:00Z"
+    },
+    {
+      "stage": "r16",
+      "home": "Argentina",
+      "away": "Egypt",
+      "utcDate": "2026-07-07T16:00:00Z"
+    },
+    {
+      "stage": "r16",
+      "home": "Switzerland",
+      "away": "Colombia",
+      "utcDate": "2026-07-07T20:00:00Z"
     }
   ]
 }
