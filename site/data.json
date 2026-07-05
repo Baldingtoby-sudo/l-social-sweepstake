@@ -1,6 +1,6 @@
 {
-  "updated": "5 Jul 2026, 22:07 UTC",
-  "updatedEpoch": 1783289270138,
+  "updated": "5 Jul 2026, 22:12 UTC",
+  "updatedEpoch": 1783289572456,
   "results": [
     {
       "gw": 1,
@@ -709,6 +709,14 @@
     {
       "gw": 5,
       "stage": "r16",
+      "home": "Brazil",
+      "homeScore": 1,
+      "away": "Norway",
+      "awayScore": 2
+    },
+    {
+      "gw": 5,
+      "stage": "r16",
       "home": "Canada",
       "homeScore": 0,
       "away": "Morocco",
@@ -935,6 +943,10 @@
       "stage": "r32"
     },
     {
+      "country": "Brazil",
+      "stage": "r16"
+    },
+    {
       "country": "Canada",
       "stage": "r16"
     },
@@ -996,6 +1008,7 @@
     "Australia",
     "Austria",
     "Bosnia & H.",
+    "Brazil",
     "Canada",
     "Cape Verde",
     "Croatia",
