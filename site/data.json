@@ -1,6 +1,6 @@
 {
-  "updated": "5 Jul 2026, 20:01 UTC",
-  "updatedEpoch": 1783281710046,
+  "updated": "5 Jul 2026, 20:06 UTC",
+  "updatedEpoch": 1783282012326,
   "results": [
     {
       "gw": 1,
@@ -1028,12 +1028,6 @@
     "Uzbekistan"
   ],
   "fixtures": [
-    {
-      "stage": "r16",
-      "home": "Brazil",
-      "away": "Norway",
-      "utcDate": "2026-07-05T20:00:00Z"
-    },
     {
       "stage": "r16",
       "home": "Mexico",
