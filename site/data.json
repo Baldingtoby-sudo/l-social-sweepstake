@@ -1,6 +1,6 @@
 {
-  "updated": "6 Jul 2026, 21:03 UTC",
-  "updatedEpoch": 1783371823981,
+  "updated": "6 Jul 2026, 21:08 UTC",
+  "updatedEpoch": 1783372125991,
   "results": [
     {
       "gw": 1,
@@ -737,6 +737,14 @@
       "homeScore": 0,
       "away": "France",
       "awayScore": 1
+    },
+    {
+      "gw": 5,
+      "stage": "r16",
+      "home": "Portugal",
+      "homeScore": 0,
+      "away": "Spain",
+      "awayScore": 1
     }
   ],
   "groupFinishes": [
@@ -1003,6 +1011,10 @@
       "stage": "r16"
     },
     {
+      "country": "Portugal",
+      "stage": "r16"
+    },
+    {
       "country": "Senegal",
       "stage": "r32"
     },
@@ -1041,6 +1053,7 @@
     "New Zealand",
     "Panama",
     "Paraguay",
+    "Portugal",
     "Qatar",
     "Saudi Arabia",
     "Scotland",
