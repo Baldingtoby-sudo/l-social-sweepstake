@@ -1,6 +1,6 @@
 {
-  "updated": "6 Jul 2026, 03:05 UTC",
-  "updatedEpoch": 1783307132654,
+  "updated": "6 Jul 2026, 03:10 UTC",
+  "updatedEpoch": 1783307435036,
   "results": [
     {
       "gw": 1,
@@ -725,6 +725,14 @@
     {
       "gw": 5,
       "stage": "r16",
+      "home": "Mexico",
+      "homeScore": 2,
+      "away": "England",
+      "awayScore": 3
+    },
+    {
+      "gw": 5,
+      "stage": "r16",
       "home": "Paraguay",
       "homeScore": 0,
       "away": "France",
@@ -983,6 +991,10 @@
       "stage": "r32"
     },
     {
+      "country": "Mexico",
+      "stage": "r16"
+    },
+    {
       "country": "Netherlands",
       "stage": "r32"
     },
@@ -1024,6 +1036,7 @@
     "Ivory Coast",
     "Japan",
     "Jordan",
+    "Mexico",
     "Netherlands",
     "New Zealand",
     "Panama",
