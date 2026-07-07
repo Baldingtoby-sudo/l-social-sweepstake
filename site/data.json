@@ -1,6 +1,6 @@
 {
-  "updated": "7 Jul 2026, 22:01 UTC",
-  "updatedEpoch": 1783461693055,
+  "updated": "7 Jul 2026, 22:06 UTC",
+  "updatedEpoch": 1783461995627,
   "results": [
     {
       "gw": 1,
@@ -757,14 +757,6 @@
     {
       "gw": 5,
       "stage": "r16",
-      "home": "Switzerland",
-      "homeScore": 0,
-      "away": "Colombia",
-      "awayScore": 0
-    },
-    {
-      "gw": 5,
-      "stage": "r16",
       "home": "USA",
       "homeScore": 1,
       "away": "Belgium",
@@ -1055,10 +1047,6 @@
       "stage": "r32"
     },
     {
-      "country": "Switzerland",
-      "stage": "r16"
-    },
-    {
       "country": "USA",
       "stage": "r16"
     }
@@ -1098,7 +1086,6 @@
     "South Africa",
     "South Korea",
     "Sweden",
-    "Switzerland",
     "Tunisia",
     "Turkey",
     "USA",
