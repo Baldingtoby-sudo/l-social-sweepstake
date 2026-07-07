@@ -1,6 +1,6 @@
 {
-  "updated": "7 Jul 2026, 18:09 UTC",
-  "updatedEpoch": 1783447772448,
+  "updated": "7 Jul 2026, 18:14 UTC",
+  "updatedEpoch": 1783448074602,
   "results": [
     {
       "gw": 1,
@@ -709,6 +709,14 @@
     {
       "gw": 5,
       "stage": "r16",
+      "home": "Argentina",
+      "homeScore": 3,
+      "away": "Egypt",
+      "awayScore": 2
+    },
+    {
+      "gw": 5,
+      "stage": "r16",
       "home": "Brazil",
       "homeScore": 1,
       "away": "Norway",
@@ -991,6 +999,10 @@
       "stage": "r32"
     },
     {
+      "country": "Egypt",
+      "stage": "r16"
+    },
+    {
       "country": "Germany",
       "stage": "r32"
     },
@@ -1052,6 +1064,7 @@
     "Czech Rep.",
     "DR Congo",
     "Ecuador",
+    "Egypt",
     "Germany",
     "Ghana",
     "Haiti",
