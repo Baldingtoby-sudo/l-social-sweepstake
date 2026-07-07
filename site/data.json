@@ -1,6 +1,6 @@
 {
-  "updated": "7 Jul 2026, 02:01 UTC",
-  "updatedEpoch": 1783389688509,
+  "updated": "7 Jul 2026, 02:06 UTC",
+  "updatedEpoch": 1783389990873,
   "results": [
     {
       "gw": 1,
@@ -745,6 +745,14 @@
       "homeScore": 0,
       "away": "Spain",
       "awayScore": 1
+    },
+    {
+      "gw": 5,
+      "stage": "r16",
+      "home": "USA",
+      "homeScore": 1,
+      "away": "Belgium",
+      "awayScore": 4
     }
   ],
   "groupFinishes": [
@@ -1025,6 +1033,10 @@
     {
       "country": "Sweden",
       "stage": "r32"
+    },
+    {
+      "country": "USA",
+      "stage": "r16"
     }
   ],
   "eliminated": [
@@ -1063,6 +1075,7 @@
     "Sweden",
     "Tunisia",
     "Turkey",
+    "USA",
     "Uruguay",
     "Uzbekistan"
   ],
