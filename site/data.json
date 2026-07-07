@@ -1,6 +1,6 @@
 {
-  "updated": "7 Jul 2026, 22:51 UTC",
-  "updatedEpoch": 1783464715089,
+  "updated": "7 Jul 2026, 22:56 UTC",
+  "updatedEpoch": 1783465016779,
   "results": [
     {
       "gw": 1,
@@ -758,9 +758,9 @@
       "gw": 5,
       "stage": "r16",
       "home": "Switzerland",
-      "homeScore": 2,
+      "homeScore": 4,
       "away": "Colombia",
-      "awayScore": 1
+      "awayScore": 3
     },
     {
       "gw": 5,
