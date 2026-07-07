@@ -1,6 +1,6 @@
 {
-  "updated": "7 Jul 2026, 20:00 UTC",
-  "updatedEpoch": 1783454422992,
+  "updated": "7 Jul 2026, 20:05 UTC",
+  "updatedEpoch": 1783454725985,
   "results": [
     {
       "gw": 1,
@@ -1093,12 +1093,6 @@
     "Uzbekistan"
   ],
   "fixtures": [
-    {
-      "stage": "r16",
-      "home": "Switzerland",
-      "away": "Colombia",
-      "utcDate": "2026-07-07T20:00:00Z"
-    },
     {
       "stage": "qf",
       "home": "France",
