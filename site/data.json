@@ -1,6 +1,6 @@
 {
-  "updated": "8 Jul 2026, 06:11 UTC",
-  "updatedEpoch": 1783491089426,
+  "updated": "8 Jul 2026, 06:16 UTC",
+  "updatedEpoch": 1783491391512,
   "results": [
     {
       "gw": 1,
@@ -1123,6 +1123,12 @@
       "home": "Norway",
       "away": "England",
       "utcDate": "2026-07-11T21:00:00Z"
+    },
+    {
+      "stage": "qf",
+      "home": "Argentina",
+      "away": "Switzerland",
+      "utcDate": "2026-07-12T01:00:00Z"
     }
   ]
 }
