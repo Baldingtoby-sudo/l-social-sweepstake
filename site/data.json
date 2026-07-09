@@ -1,6 +1,6 @@
 {
-  "updated": "9 Jul 2026, 22:02 UTC",
-  "updatedEpoch": 1783634550889,
+  "updated": "9 Jul 2026, 22:07 UTC",
+  "updatedEpoch": 1783634853131,
   "results": [
     {
       "gw": 1,
@@ -769,6 +769,14 @@
       "homeScore": 1,
       "away": "Belgium",
       "awayScore": 4
+    },
+    {
+      "gw": 6,
+      "stage": "qf",
+      "home": "France",
+      "homeScore": 2,
+      "away": "Morocco",
+      "awayScore": 0
     }
   ],
   "groupFinishes": [
@@ -1035,6 +1043,10 @@
       "stage": "r16"
     },
     {
+      "country": "Morocco",
+      "stage": "qf"
+    },
+    {
       "country": "Netherlands",
       "stage": "r32"
     },
@@ -1087,6 +1099,7 @@
     "Japan",
     "Jordan",
     "Mexico",
+    "Morocco",
     "Netherlands",
     "New Zealand",
     "Panama",
