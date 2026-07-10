@@ -1,6 +1,6 @@
 {
-  "updated": "10 Jul 2026, 16:37 UTC",
-  "updatedEpoch": 1783701455491,
+  "updated": "10 Jul 2026, 21:09 UTC",
+  "updatedEpoch": 1783717757378,
   "results": [
     {
       "gw": 1,
@@ -777,6 +777,14 @@
       "homeScore": 2,
       "away": "Morocco",
       "awayScore": 0
+    },
+    {
+      "gw": 6,
+      "stage": "qf",
+      "home": "Spain",
+      "homeScore": 2,
+      "away": "Belgium",
+      "awayScore": 1
     }
   ],
   "groupFinishes": [
@@ -987,6 +995,10 @@
       "stage": "r32"
     },
     {
+      "country": "Belgium",
+      "stage": "qf"
+    },
+    {
       "country": "Bosnia & H.",
       "stage": "r32"
     },
@@ -1079,6 +1091,7 @@
     "Algeria",
     "Australia",
     "Austria",
+    "Belgium",
     "Bosnia & H.",
     "Brazil",
     "Canada",
@@ -1119,12 +1132,6 @@
     "Uzbekistan"
   ],
   "fixtures": [
-    {
-      "stage": "qf",
-      "home": "Spain",
-      "away": "Belgium",
-      "utcDate": "2026-07-10T19:00:00Z"
-    },
     {
       "stage": "qf",
       "home": "Norway",
