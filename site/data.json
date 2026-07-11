@@ -1,6 +1,6 @@
 {
-  "updated": "11 Jul 2026, 06:08 UTC",
-  "updatedEpoch": 1783750107311,
+  "updated": "11 Jul 2026, 06:13 UTC",
+  "updatedEpoch": 1783750409748,
   "results": [
     {
       "gw": 1,
@@ -1143,6 +1143,12 @@
       "home": "Argentina",
       "away": "Switzerland",
       "utcDate": "2026-07-12T01:00:00Z"
+    },
+    {
+      "stage": "sf",
+      "home": "France",
+      "away": "Spain",
+      "utcDate": "2026-07-14T19:00:00Z"
     }
   ]
 }
