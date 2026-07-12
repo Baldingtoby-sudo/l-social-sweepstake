@@ -1,6 +1,6 @@
 {
-  "updated": "12 Jul 2026, 06:09 UTC",
-  "updatedEpoch": 1783836573838,
+  "updated": "12 Jul 2026, 06:14 UTC",
+  "updatedEpoch": 1783836875635,
   "results": [
     {
       "gw": 1,
@@ -733,6 +733,14 @@
     {
       "gw": 5,
       "stage": "r16",
+      "home": "Mexico",
+      "homeScore": 2,
+      "away": "England",
+      "awayScore": 3
+    },
+    {
+      "gw": 5,
+      "stage": "r16",
       "home": "Paraguay",
       "homeScore": 0,
       "away": "France",
@@ -1059,6 +1067,10 @@
       "stage": "r32"
     },
     {
+      "country": "Mexico",
+      "stage": "r16"
+    },
+    {
       "country": "Morocco",
       "stage": "qf"
     },
@@ -1123,6 +1135,7 @@
     "Ivory Coast",
     "Japan",
     "Jordan",
+    "Mexico",
     "Morocco",
     "Netherlands",
     "New Zealand",
@@ -1150,6 +1163,12 @@
       "home": "France",
       "away": "Spain",
       "utcDate": "2026-07-14T19:00:00Z"
+    },
+    {
+      "stage": "sf",
+      "home": "England",
+      "away": "Argentina",
+      "utcDate": "2026-07-15T19:00:00Z"
     }
   ]
 }
