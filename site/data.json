@@ -1,6 +1,6 @@
 {
-  "updated": "15 Jul 2026, 21:04 UTC",
-  "updatedEpoch": 1784149484593,
+  "updated": "15 Jul 2026, 21:09 UTC",
+  "updatedEpoch": 1784149787027,
   "results": [
     {
       "gw": 1,
@@ -801,6 +801,14 @@
       "homeScore": 2,
       "away": "Belgium",
       "awayScore": 1
+    },
+    {
+      "gw": 7,
+      "stage": "sf",
+      "home": "England",
+      "homeScore": 1,
+      "away": "Argentina",
+      "awayScore": 2
     },
     {
       "gw": 7,
