@@ -1,6 +1,6 @@
 {
-  "updated": "15 Jul 2026, 19:03 UTC",
-  "updatedEpoch": 1784142222996,
+  "updated": "15 Jul 2026, 19:08 UTC",
+  "updatedEpoch": 1784142525452,
   "results": [
     {
       "gw": 1,
@@ -1165,12 +1165,5 @@
     "Uruguay",
     "Uzbekistan"
   ],
-  "fixtures": [
-    {
-      "stage": "sf",
-      "home": "England",
-      "away": "Argentina",
-      "utcDate": "2026-07-15T19:00:00Z"
-    }
-  ]
+  "fixtures": []
 }
