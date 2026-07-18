@@ -1,6 +1,6 @@
 {
-  "updated": "18 Jul 2026, 21:02 UTC",
-  "updatedEpoch": 1784408554594,
+  "updated": "18 Jul 2026, 21:07 UTC",
+  "updatedEpoch": 1784408856407,
   "results": [
     {
       "gw": 1,
@@ -1174,12 +1174,6 @@
     "Uzbekistan"
   ],
   "fixtures": [
-    {
-      "stage": "3rd",
-      "home": "France",
-      "away": "England",
-      "utcDate": "2026-07-18T21:00:00Z"
-    },
     {
       "stage": "final",
       "home": "Spain",
