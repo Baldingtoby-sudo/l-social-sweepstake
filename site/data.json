@@ -1,6 +1,6 @@
 {
-  "updated": "18 Jul 2026, 23:03 UTC",
-  "updatedEpoch": 1784415799334,
+  "updated": "18 Jul 2026, 23:08 UTC",
+  "updatedEpoch": 1784416101080,
   "results": [
     {
       "gw": 1,
@@ -817,6 +817,14 @@
       "homeScore": 0,
       "away": "Spain",
       "awayScore": 2
+    },
+    {
+      "gw": 8,
+      "stage": "3rd",
+      "home": "France",
+      "homeScore": 4,
+      "away": "England",
+      "awayScore": 6
     }
   ],
   "groupFinishes": [
@@ -1067,6 +1075,14 @@
       "stage": "r16"
     },
     {
+      "country": "England",
+      "stage": "3rd"
+    },
+    {
+      "country": "France",
+      "stage": "4th"
+    },
+    {
       "country": "Germany",
       "stage": "r32"
     },
@@ -1143,6 +1159,8 @@
     "DR Congo",
     "Ecuador",
     "Egypt",
+    "England",
+    "France",
     "Germany",
     "Ghana",
     "Haiti",
