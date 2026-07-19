@@ -1,6 +1,6 @@
 {
-  "updated": "19 Jul 2026, 19:03 UTC",
-  "updatedEpoch": 1784487812764,
+  "updated": "19 Jul 2026, 19:08 UTC",
+  "updatedEpoch": 1784488114568,
   "results": [
     {
       "gw": 1,
@@ -1191,12 +1191,5 @@
     "Uruguay",
     "Uzbekistan"
   ],
-  "fixtures": [
-    {
-      "stage": "final",
-      "home": "Spain",
-      "away": "Argentina",
-      "utcDate": "2026-07-19T19:00:00Z"
-    }
-  ]
+  "fixtures": []
 }
