@@ -1,6 +1,6 @@
 {
-  "updated": "19 Jul 2026, 22:04 UTC",
-  "updatedEpoch": 1784498682407,
+  "updated": "19 Jul 2026, 22:09 UTC",
+  "updatedEpoch": 1784498984277,
   "results": [
     {
       "gw": 1,
@@ -825,6 +825,14 @@
       "homeScore": 4,
       "away": "England",
       "awayScore": 6
+    },
+    {
+      "gw": 9,
+      "stage": "final",
+      "home": "Spain",
+      "homeScore": 1,
+      "away": "Argentina",
+      "awayScore": 0
     }
   ],
   "groupFinishes": [
@@ -1027,6 +1035,10 @@
       "stage": "r32"
     },
     {
+      "country": "Argentina",
+      "stage": "final"
+    },
+    {
       "country": "Australia",
       "stage": "r32"
     },
@@ -1131,6 +1143,10 @@
       "stage": "r32"
     },
     {
+      "country": "Spain",
+      "stage": "win"
+    },
+    {
       "country": "Sweden",
       "stage": "r32"
     },
@@ -1145,6 +1161,7 @@
   ],
   "eliminated": [
     "Algeria",
+    "Argentina",
     "Australia",
     "Austria",
     "Belgium",
