@@ -1,5 +1,9 @@
 # Base World Cup Sweepstake
 
+> **Also in this repo:** [`racing-empire/`](racing-empire/) — Racing Empire, a
+> horse-racing tipping competition app (leagues, credits, pot competitions).
+> Static and dependency-free like this site; see its own README.
+
 Single-file sweepstake app for 8 players tracking World Cup 2026 results, with a
 script that pulls results from football-data.org and rewrites the data arrays
 automatically.
